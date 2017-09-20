@@ -83,7 +83,7 @@ a {
 .section-home-video>video {
 	position: absolute;
     display: block;
-} 
+}
 section {
     display: block;
     width: 100%;
@@ -221,4 +221,14 @@ footer ul li a:hover{
         right: 0;
         bottom: 100px;
     }
+}
+@media screen and (max-width: 1312px) {
+	.section-home-video {
+		display: none!important;
+	}
+	.section-home {
+		background-image: url(../images/bg-video.png);
+		background-position: top;
+		background-size: cover;
+	}
 }
