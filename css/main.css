@@ -83,8 +83,6 @@ a {
 .section-home-video>video {
 	position: absolute;
     display: block;
-    height: 100%;
-    width: 100%;
 } 
 section {
     display: block;
@@ -144,7 +142,7 @@ section {
     font-size: 24px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(http://ossweb-img.qq.com/images/lol/v2/bg-footer.jpg);
+    background-image: url(../images/bg-introduce.jpg);
 }
 .LOL-introduce h2 {
     color: #fdee92;
@@ -158,15 +156,14 @@ section {
 }
 .hero-image {
     float: left;
-    width: 300px;
+    width: 30%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url(http://overwatch.nos.netease.com/1/images/v2/home/overlay/soldier-76.png);
 }
 .hero-introduce {
     text-align: center;
-    padding-top: 120px;
+    padding-top: 20px;
     font-size: 30px;
     font-style: italic;
 }
@@ -188,7 +185,6 @@ section {
     text-align: left;
 }
 .hero-introduce>ul li{
-    display: inline-block;
     vertical-align: middle;
 }
 footer ul {
@@ -208,4 +204,21 @@ footer ul li a {
 }
 footer ul li a:hover{
     opacity:0.5;
+}
+/* 响应式设计 */
+@media only screen and (max-width: 630px) {
+    .hero-image {
+        position: absolute;
+        height: 160px;
+        left: 10%;
+        bottom: 100px;
+    }
+    .hero-introduce {
+        font-size: 20px;
+    }
+    .hero-introduce>ul {
+        position: absolute;
+        right: 0;
+        bottom: 100px;
+    }
 }

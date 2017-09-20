@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-	<title></title>
+	<title>峡谷之战</title>
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 	<link href="https://cdn.bootcss.com/Swiper/3.1.2/css/swiper.css" rel="stylesheet">
 	<link href="./css/animate.min.css" rel="stylesheet">
@@ -27,14 +27,15 @@
 	<!-- end 导航-->
 	<section class="section-home">
 		 <div class="section-home-video">
-            <video autoplay="autoplay" loop="" poster="http://overwatch.nos.netease.com/1/assets/img/pages/home/anniversary/header-video-poster.jpg">
-                <source src="http://ossweb-img.qq.com/images/lol/v2/banner/big-v12.webm" type="video/webm">
-                <source src="//ossweb-img.qq.com/images/lol/v2/banner/big-v12.mp4" type="video/mp4">
+            <video autoplay="autoplay" loop="">
+            	<!-- 考虑到不同浏览器支持的视频格式不同 -->
+                <source src="./images/source/big-v1.webm" type="video/webm">
+                <source src="./images/source/big-v1.mp4" type="video/mp4">
             </video>
         </div>
         <div class="section-home-text">
         	<h2>LOL-峡谷之战</h2>
-        	<img src="./images/LOL.png">
+        	<img src="./images/LOL.png" alt="LOL">
         </div>
 	</section>
 
@@ -47,8 +48,6 @@
 				<div class="swiper-slide bg-v3"></div>
 				<div class="swiper-slide bg-v4"></div>
 			</div>
-			 <!-- Add Pagination -->
-	        <div class="swiper-pagination swiper-pagination-white"></div>
 	        <!-- Add Arrows -->
 	        <div class="swiper-button-next swiper-button-white"></div>
 	        <div class="swiper-button-prev swiper-button-white"></div>
@@ -82,55 +81,55 @@
 		<div style="width: 100%;height: 80%;" class="hreo-turn">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<div class="hero-image"></div>
+					<div class="hero-image" style="background-image: url(./images/Tryndamere.png);"></div>
 					<div class="hero-introduce">
 						<span>刺客</span><span>战士</span>
 						<p class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">“怒气，即是我的武器。”——泰达米尔</p>
 						<ul class="ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.3s" swiper-animate-delay="0.1s">
-							<li style="width: 30%;padding-right: 30px;">物理攻击</li>
+							<li style="width: 30%;padding-right: 40px;">物理攻击</li>
 							<li style="width: 100px;"><i style="display: block;height: 20px;background: #F2C500;border-radius: 2px;"></i></li>
-							<li style="width: 30%;padding-right: 30px;">魔法攻击</li>
+							<li style="width: 30%;padding-right: 40px;">魔法攻击</li>
 							<li style="width: 20px;"><i style="display: block;height: 20px;background: #F59D00;border-radius: 2px;"></i></li>
-							<li style="width: 30%;padding-right: 30px;">防御能力</li>
+							<li style="width: 30%;padding-right: 40px;">防御能力</li>
 							<li style="width: 50px;"><i style="display: block;height: 20px;background: #2C97DE;border-radius: 2px;"></i></li>
-							<li style="width: 30%;padding-right: 30px;">上手难度</li>
+							<li style="width: 30%;padding-right: 40px;">上手难度</li>
 							<li style="width: 50px;"><i style="display: block;height: 20px;background: #1ECA6B;border-radius: 2px;"></i></li>
 						</ul>
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div class="hero-image"></div>
+					<div class="hero-image" style="background-image: url(./images/Lux.png);"></div>
 					<div class="hero-introduce">
-						<span>刺客</span><span>战士</span>
+						<span>法师</span><span>辅助</span>
 						<p class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-							战争与谋杀之间，潜藏着我们的心魇。”——放逐之刃
+							“能遇到你，我是幸福的，我希望留在你身边”——光辉女郎
 						</p>
 						<ul class="ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.3s" swiper-animate-delay="0.1s">
-							<li style="width: 30%;padding-right: 30px;">物理攻击</li>
-							<li style="width: 80px;"><i style="display: block;height: 20px;background: #F2C500;border-radius: 2px;"></i></li>
-							<li style="width: 30%;padding-right: 30px;">魔法攻击</li>
-							<li style="width: 10px;padding-right: calc(60% - 40px);"><i style="display: block;height: 20px;background: #F59D00;border-radius: 2px;"></i></li>
-							<li style="width: 30%;padding-right: 30px;">防御能力</li>
-							<li style="width: 50px;padding-right: calc(60% - 80px);"><i style="display: block;height: 20px;background: #2C97DE;border-radius: 2px;"></i></li>
-							<li style="width: 30%;padding-right: 30px;">上手难度</li>
-							<li style="width: 80px;padding-right: calc(60% - 110px);"><i style="display: block;height: 20px;background: #1ECA6B;border-radius: 2px;"></i></li>
+							<li style="width: 30%;padding-right: 40px;">物理攻击</li>
+							<li style="width: 20px;"><i style="display: block;height: 20px;background: #F2C500;border-radius: 2px;"></i></li>
+							<li style="width: 30%;padding-right: 40px;">魔法攻击</li>
+							<li style="width: 90px;"><i style="display: block;height: 20px;background: #F59D00;border-radius: 2px;"></i></li>
+							<li style="width: 30%;padding-right: 40px;">防御能力</li>
+							<li style="width: 40px;"><i style="display: block;height: 20px;background: #2C97DE;border-radius: 2px;"></i></li>
+							<li style="width: 30%;padding-right: 40px;">上手难度</li>
+							<li style="width: 50px;"><i style="display: block;height: 20px;background: #1ECA6B;border-radius: 2px;"></i></li>
 						</ul>
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div class="hero-image"></div>
+					<div class="hero-image" style="background-image: url(./images/Garen.png);"></div>
 					<div class="hero-introduce">
-						<span>刺客</span><span>战士</span>
-						<p class="ani" swiper-animate-effect="wobble" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">“剑之故事，以血为墨。”——亚索</p>
+						<span>战士</span><span>坦克</span>
+						<p class="ani" swiper-animate-effect="wobble" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">“人在塔在”——德玛西亚之力</p>
 						<ul class="ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.3s" swiper-animate-delay="0.1s">
-							<li style="width: 30%;padding-right: 30px;">物理攻击</li>
-							<li style="width: 80px;"><i style="display: block;height: 20px;background: #F2C500;border-radius: 2px;"></i></li>
-							<li style="width: 30%;padding-right: 30px;">魔法攻击</li>
-							<li style="width: 40px;"><i style="display: block;height: 20px;background: #F59D00;border-radius: 2px;"></i></li>
-							<li style="width: 30%;padding-right: 30px;">防御能力</li>
-							<li style="width: 40px;"><i style="display: block;height: 20px;background: #2C97DE;border-radius: 2px;"></i></li>
-							<li style="width: 30%;padding-right: 30px;">上手难度</li>
-							<li style="width: 100px;"><i style="display: block;height: 20px;background: #1ECA6B;border-radius: 2px;"></i></li>
+							<li style="width: 30%;padding-right: 40px;">物理攻击</li>
+							<li style="width: 70px;"><i style="display: block;height: 20px;background: #F2C500;border-radius: 2px;"></i></li>
+							<li style="width: 30%;padding-right: 40px;">魔法攻击</li>
+							<li style="width: 10px;"><i style="display: block;height: 20px;background: #F59D00;border-radius: 2px;"></i></li>
+							<li style="width: 30%;padding-right: 40px;">防御能力</li>
+							<li style="width: 70px;"><i style="display: block;height: 20px;background: #2C97DE;border-radius: 2px;"></i></li>
+							<li style="width: 30%;padding-right: 40px;">上手难度</li>
+							<li style="width: 50px;"><i style="display: block;height: 20px;background: #1ECA6B;border-radius: 2px;"></i></li>
 						</ul>
 					</div>
 				</div>
@@ -160,7 +159,6 @@
  <script>
  	// 首页图片轮播
     var swiper1 = new Swiper('.swiper-container', {
-    	pagination: '.swiper-pagination',
         paginationClickable: true,
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
