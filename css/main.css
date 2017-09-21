@@ -112,7 +112,7 @@ section {
     line-height: 50px;
     font-weight: bold;
     color: #ffcb60;
-    background-image: -webkit-linear-gradient(to bottom right, rgba(255,232,184,1), rgba(175,133,48,1));
+    background-image: linear-gradient(to bottom right, rgba(255,232,184,1), rgba(175,133,48,1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
