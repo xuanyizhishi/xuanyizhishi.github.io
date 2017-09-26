@@ -18,11 +18,14 @@
 	        </div>
 	        <!--  -->
 	        <ul>
-	        	<li><a href="" class="">英雄</a></li>
+	        	<li><a href="">英雄</a></li>
 	        	<li><a href="">图片</a></li>
 	        	<li><a href="">视频</a></li>
 	        	<li><a href="">资讯</a></li>
 	        </ul>
+	        <div class="nav-right">
+	        	<a  href="http://lol.qq.com/download.shtml" target="_blank" class="nav-download nav-transition">下载</a>
+	        </div>
 		</nav>
 	</div>
 	<!-- end 导航-->
@@ -43,10 +46,10 @@
 		<!-- 图片轮播 -->
 		<div class="swiper-container" style="height: 400px;">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide bg-v1"></div>
-				<div class="swiper-slide bg-v2"></div>
-				<div class="swiper-slide bg-v3"></div>
-				<div class="swiper-slide bg-v4"></div>
+				<div data-background="./images/bg_1.jpg" class="swiper-slide swiper-lazy bg-img"></div>
+				<div data-background="./images/bg_2.jpg" class="swiper-slide swiper-lazy bg-img"></div>
+				<div data-background="./images/bg_3.jpg" class="swiper-slide swiper-lazy bg-img"></div>
+				<div data-background="./images/bg_4.jpg" class="swiper-slide swiper-lazy bg-img"></div>
 			</div>
 	        <!-- Add Arrows -->
 	        <div class="swiper-button-next swiper-button-white"></div>
@@ -139,6 +142,52 @@
 		</div>
 		<!-- end 英雄介绍轮播 -->
 	</section>
+	<section class="how-to-play">
+		<div class="play-turn">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="bg-1 bg-blur"></div>
+					<div class="content">
+					<img src="https://imgsa.baidu.com/exp/w=480/sign=a03d0f52d51373f0f53f6e97940e4b8b/a08b87d6277f9e2f76768a211b30e924b899f35c.jpg">
+					<h2>召唤师峡谷</h2>
+					<p>
+						召唤师峡谷位于弗雷尔卓德和一座偏僻的森林之间。召唤师峡谷是瓦罗兰大陆上一个为数不多的，到处充斥着魔法力量的地方，<br><br>
+						使之成为一个受追求魔法者欢迎的地方。这里的魔法能量是如此的大，改变了这里的生物。这里生存着巨大的青蛙，双头狼，变色龙，<br><br>
+						有角的兔子和蝴蝶。这个地方也吸引了龙。而纳什男爵也再度出现，这是一条巨大的蛇形生物，很多人认为它已经死了几个世纪，它污染着周围的土地。<br><br>
+						
+						三条不同的道路贯穿整个战场，选择敌人最薄弱的一条发动进攻。与你的友军一起进攻敌人的基地，然后摧毁他们的水晶枢纽！<br><br>
+					</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="bg-2 bg-blur"></div>
+					<div class="content">
+					<img src="https://imgsa.baidu.com/exp/w=480/sign=92735e1a9645d688a302b3ac94c37dab/aa64034f78f0f736fe4ddb280e55b319ebc41363.jpg">
+					<h2>扭曲丛林</h2>
+					<p>
+						扭曲丛林位于铁脊山脉以北的一片茂密的森林，位于祖安城邦和另一个主关口之间(这个关口将诺克萨斯和瓦罗兰北部海滩连接起来)<br><br>。扭曲丛林作为祖安附近仅有几处未被砍伐的森林，或许这个竞技场的地形可以解释原因。魔法滥用——主要来自祖安，当然也包括符文之战无数次战斗)<br><br>——扭曲了森林翠绿的生态环境，将其变成一片奇异的异域景象。扭曲丛林里的两座水晶枢纽更多的要持该地区物理环境的稳定性。<br><br>
+					</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="bg-3 bg-blur"></div>
+					<div class="content">
+					<img src="https://imgsa.baidu.com/exp/w=480/sign=115b3c480bb30f24359aed0bf894d192/377adab44aed2e73e10611058301a18b87d6fa28.jpg">
+					<h2>嚎哭深渊</h2>
+					<p>
+						嚎哭深渊，无底的缝隙，开凿于冰川之中的远古壁垒耸立两侧。没有人记得谁建造了这个地方，也没有人知道它为何而建。<br><br>
+						许久之前，恕瑞玛还没有被黄沙吞没，魔法也还没有撕裂山峦。强大的冰霜守卫交予我们魔法，让我们变成了不朽的存在，<br><br>
+						他叫我们- 冰族。作为反馈，我们建造了坚实的壁垒，建立了庞大的帝国，献上了我们的忠诚。然而，反抗和背叛让无数冰族陨落。嚎哭深渊就此成名。<br><br>
+						
+						所有人随机选取英雄，地图只有一条兵线，只有死亡后才能回基地补给和消费。<br><br>
+					</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="swiper-pagination"></div>
+		</div>
+	</section>
 	<footer>
 		<nav>
 			<ul>
@@ -164,7 +213,9 @@
         prevButton: '.swiper-button-prev',
         spaceBetween: 30,
         autoplay : 3000,
-        autoplayDisableOnInteraction : false
+        autoplayDisableOnInteraction : false,
+        preloadImages: false,
+        lazyLoading : true
     });
 
     var swiper2 = new Swiper('.hreo-turn', {
@@ -178,6 +229,18 @@
 	  pagination : '.swiper-pagination',
 	  paginationClickable :true
 	});
+
+	var swiper3 = new Swiper('.play-turn', {
+        pagination: '.swiper-pagination',
+        effect: 'cube',
+        grabCursor: true,
+        cube: {
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94
+        }
+    });
 </script>
 </body>
 </html>

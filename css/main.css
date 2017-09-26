@@ -39,7 +39,6 @@ a {
 .navbars ul {
     line-height: 1.6;
     height: 100%;
-    width: 720px;
     padding: 0 50px;
     margin: 0;
 }
@@ -48,12 +47,39 @@ a {
     font-size: 0;
     margin: 0;
 }
+.navbars .nav-right {
+	position: absolute;
+	width: 98px;
+	height: 62px;
+    right: 0;
+    top: 0;
+}
+.navbars .nav-download {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 12px 33px;
+	text-align: center;
+	display: inline-block;
+	font-size: 12px;
+	margin: 11px 4px;
+	cursor: pointer;
+}
+.nav-download:hover {
+	border-radius:25px;
+}
+.navbars .nav-transition {
+	transition: border-radius 1s;
+	-moz-transition: border-radius 1s;	/* Firefox 4 */
+	-webkit-transition: border-radius 1s;	/* Safari 和 Chrome */
+	-o-transition: border-radius 1s;	/* Opera */
+}
 .navbars .nav-logo{
+    display: inline-block;
 	width: 245px;
 	height: 62px;
 	background-repeat: no-repeat;
     background-position: center center;
-    display: inline-block;
 	background-image: url(../images/logo.png);
 }
 .navbars ul li {
@@ -121,22 +147,10 @@ section {
     overflow: hidden;
     text-align: center;
 }
-.bg-v1,.bg-v2,.bg-v3,.bg-v4 {
+.bg-img {
     background-repeat: no-repeat;
     background-size: contain;
     background-position:center;
-}
-.bg-v1 {
-    background-image: url(../images/bg_1.jpg);
-}
-.bg-v2 {
-    background-image: url(../images/bg_2.jpg);
-}
-.bg-v3 {
-    background-image: url(../images/bg_3.jpg);
-}
-.bg-v4 {
-    background-image: url(../images/bg_4.jpg);
 }
 .LOL-introduce {
     padding: 30px;
@@ -188,20 +202,56 @@ section {
 .hero-introduce>ul li{
     vertical-align: middle;
 }
+.how-to-play {
+    font-size: 24px;
+    height: 700px;
+}
+.bg-1 {
+    background-image: url(../images/module_1.jpg);
+}
+.bg-2 {
+    background-image: url(../images/module_2.jpg);
+}
+.bg-3 {
+    background-image: url(../images/module_3.jpg);
+}
+.bg-blur {
+    float: left;
+    width: 100%;
+    height:700px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+.how-to-play .content {
+    position:absolute;
+    left: 10px;
+    right: 10px;
+    padding: 30px;
+    font-size: 16px;
+    width: 40%;
+    height: 100%;
+    text-align: left;
+    overflow: hidden;
+    color: #dac68c;
+}
 footer ul {
-    text-align: center;
+	text-align: center;
     padding: 30px 0; 
     border-bottom: 1px solid rgba(255,255,255,.15);
 }
 footer ul li {
     display: inline-block;
     height: 100%;
-    padding-right: 20px;
     color: #ccc;
-    font-size: 15px;
 }
-footer ul li a {
-    padding-right: 20px;
+footer ul li a, footer ul li {
+    padding-right: 10px;
 }
 footer ul li a:hover{
     opacity:0.5;
@@ -221,6 +271,12 @@ footer ul li a:hover{
         position: absolute;
         right: 0;
         bottom: 100px;
+    }
+    .navbars ul {
+    	display: none;
+    }
+    .how-to-play .content {
+        width: 70%;
     }
 }
 @media screen and (max-width: 1312px) {
