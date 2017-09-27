@@ -9,6 +9,9 @@ body,article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,
     display: block;
     margin: 0;
 }
+button {
+    outline: none;
+}
 ul {
     list-style: none;
 }
@@ -98,22 +101,97 @@ a {
     min-width: 99px;
     padding-top: 15px;
 }
+/* video */
 .section-home-video {
-	position: absolute;
+	position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     overflow: hidden;
+    display: none;
+    z-index: 99;
+}
+.box-mask {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    background:black;
+    z-index: 100;
+}
+.vedio-alert {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 101;
+    display: none;
+}
+.vedio-alert video {
+    clear: both;
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: 568px;
+    position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.model {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+video::-webkit-media-controls-enclosure {
+    width: fit-content;
 }
 .section-home-video>video {
 	position: absolute;
     display: block;
 }
+#cls {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #fff;
+    font-size: 30px;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+#cls:hover {
+    background-color: #fff;
+    color: black;
+    border-radius: 25px;
+
+}
+#cls:active {
+    padding: 0;
+}
+#watch {
+    padding: 20px 110px;
+    border-radius: 30px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #dbbb7a;
+}
+#watch:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+/* end video */
 section {
     display: block;
     width: 100%;
     max-width: 100%;
+    overflow: hidden;
 }
 /*1vh = 1%*/
 .section-home {
@@ -121,9 +199,11 @@ section {
 	background-position: top;
 	background-size: cover;
 	margin-top: 0;
-    background-image: none;
     min-height: 420px;
     height: 100vh;
+    background-image: url(../images/bg-video.png);
+    background-position: top;
+    background-size: cover;
 }
 .section-home-text {
     position: absolute;
@@ -278,14 +358,7 @@ footer ul li a:hover{
     .how-to-play .content {
         width: 70%;
     }
-}
-@media screen and (max-width: 1312px) {
-	.section-home-video {
-		display: none!important;
-	}
-	.section-home {
-		background-image: url(../images/bg-video.png);
-		background-position: top;
-		background-size: cover;
-	}
+    #watch {
+    	display: none !important;
+    }
 }

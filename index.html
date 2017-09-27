@@ -24,21 +24,26 @@
 	        	<li><a href="">资讯</a></li>
 	        </ul>
 	        <div class="nav-right">
-	        	<a  href="http://lol.qq.com/download.shtml" target="_blank" class="nav-download nav-transition">下载</a>
+	        	<a href="http://lol.qq.com/download.shtml" target="_blank" class="nav-download nav-transition">下载</a>
 	        </div>
 		</nav>
 	</div>
 	<!-- end 导航-->
 	<section class="section-home">
 		<div class="section-home-video">
-            <video autoplay="autoplay" loop="">
-            	<!-- 考虑到不同浏览器支持的视频格式不同 -->
-                <source src="./images/source/big-v1.webm" type="video/webm">
-                <source src="./images/source/big-v1.mp4" type="video/mp4">
-            </video>
+			<div class="box-mask"></div>
+			<div class="vedio-alert model">
+				<button id="cls">关闭</button>
+				<video loop="loop" controlsList="nodownload" id="video" controls poster="./images/bg-video.png" x-webkit-airplay="true" webkit-playsinline="true">
+	            	<!-- 考虑到不同浏览器支持的视频格式不同 -->
+	                <!-- <source src="./images/source/big-v1.webm" type="video/webm"> -->
+	                <source src="http://omsiv11v3.bkt.clouddn.com/Youtube-League+of+Legends+Cinematic_+A+New+Dawn_1080P.mp4" type="video/mp4">
+	            </video>
+			</div>
         </div>
         <div class="section-home-text">
         	<h2>LOL-峡谷之战</h2>
+        	<button id="watch">观看介绍</button>
         </div>
 	</section>
 
@@ -148,7 +153,7 @@
 				<div class="swiper-slide">
 					<div class="bg-1 bg-blur"></div>
 					<div class="content">
-					<img src="https://imgsa.baidu.com/exp/w=480/sign=a03d0f52d51373f0f53f6e97940e4b8b/a08b87d6277f9e2f76768a211b30e924b899f35c.jpg">
+					<img src="./images/lv1.jpg">
 					<h2>召唤师峡谷</h2>
 					<p>
 						召唤师峡谷位于弗雷尔卓德和一座偏僻的森林之间。召唤师峡谷是瓦罗兰大陆上一个为数不多的，到处充斥着魔法力量的地方，<br><br>
@@ -162,7 +167,7 @@
 				<div class="swiper-slide">
 					<div class="bg-2 bg-blur"></div>
 					<div class="content">
-					<img src="https://imgsa.baidu.com/exp/w=480/sign=92735e1a9645d688a302b3ac94c37dab/aa64034f78f0f736fe4ddb280e55b319ebc41363.jpg">
+					<img src="./images/lv2.jpg">
 					<h2>扭曲丛林</h2>
 					<p>
 						扭曲丛林位于铁脊山脉以北的一片茂密的森林，位于祖安城邦和另一个主关口之间(这个关口将诺克萨斯和瓦罗兰北部海滩连接起来)<br><br>。扭曲丛林作为祖安附近仅有几处未被砍伐的森林，或许这个竞技场的地形可以解释原因。魔法滥用——主要来自祖安，当然也包括符文之战无数次战斗)<br><br>——扭曲了森林翠绿的生态环境，将其变成一片奇异的异域景象。扭曲丛林里的两座水晶枢纽更多的要持该地区物理环境的稳定性。<br><br>
@@ -172,7 +177,7 @@
 				<div class="swiper-slide">
 					<div class="bg-3 bg-blur"></div>
 					<div class="content">
-					<img src="https://imgsa.baidu.com/exp/w=480/sign=115b3c480bb30f24359aed0bf894d192/377adab44aed2e73e10611058301a18b87d6fa28.jpg">
+					<img src="./images/lv3.jpg">
 					<h2>嚎哭深渊</h2>
 					<p>
 						嚎哭深渊，无底的缝隙，开凿于冰川之中的远古壁垒耸立两侧。没有人记得谁建造了这个地方，也没有人知道它为何而建。<br><br>
@@ -241,6 +246,19 @@
             shadowScale: 0.94
         }
     });
+
+    !function () {
+    	document.getElementById('watch').addEventListener("click", function () {
+			document.querySelector('.vedio-alert').style.display = "block";
+			document.querySelector('.section-home-video').style.display = "block";
+	    });
+
+    	document.getElementById('cls').addEventListener("click", function () {
+			document.querySelector('.vedio-alert').style.display = "none";
+			document.querySelector('.section-home-video').style.display = "none";
+			document.getElementById('video').load();
+    	});
+    }()
 </script>
 </body>
 </html>
