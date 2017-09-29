@@ -231,10 +231,7 @@ section {
     background-repeat: no-repeat;
     background-size: contain;
     background-position:center;
-    /* to delete */
-    line-height: 400px;
-    font-size: 30px;
-    color: rgba(255, 249, 0, 0.85);
+    padding-bottom: 50%;
 }
 .LOL-introduce {
     padding: 30px;
