@@ -362,4 +362,7 @@ footer ul li a:hover{
     #watch {
     	display: none !important;
     }
+    .LOL-introduce {
+        text-align: left;
+    }
 }
