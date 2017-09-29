@@ -212,12 +212,40 @@ section {
     width: 100%;
     text-align: center;
 }
+
+/* 此处开始为打字动画 */
+@keyframes typing { 
+    from { 
+        width: 0;
+    }
+}
+@keyframes blink { 
+    0% {
+        border-right: .1em solid;
+    }
+    50% { 
+        border-color: transparent; 
+    }
+    100% {
+        border: none;
+    }
+}
+
+.typing {
+    overflow: hidden;
+    animation: typing 4s steps(4,end) forwards,
+    blink .5s step-end 10;
+}
+/* end 打字动画 */
+
 .section-home-text h2 {
     height: 50px;
     font-size: 50px;
+    width: 200px; 
     line-height: 50px;
     font-weight: bold;
     color: #ffcb60;
+    margin: 42px auto;
     background-image: linear-gradient(to bottom right, rgba(255,232,184,1), rgba(175,133,48,1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
