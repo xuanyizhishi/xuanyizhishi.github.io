@@ -52,10 +52,10 @@ a {
 }
 .navbars .nav-right {
 	position: absolute;
-	width: 98px;
 	height: 62px;
     right: 0;
     top: 0;
+    padding: 8px 14px;
 }
 .navbars .nav-download {
 	background-color: #4CAF50;
@@ -65,7 +65,6 @@ a {
 	text-align: center;
 	display: inline-block;
 	font-size: 12px;
-	margin: 11px 4px;
 	cursor: pointer;
 }
 .nav-download:hover {
@@ -243,7 +242,7 @@ section {
     font-size: 50px;
     width: 200px; 
     line-height: 50px;
-    font-weight: bold;
+    font-weight: normal;
     color: #ffcb60;
     margin: 42px auto;
     background-image: linear-gradient(to bottom right, rgba(255,232,184,1), rgba(175,133,48,1));
