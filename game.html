@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta charset="utf-8">
+	<title>游戏介绍</title>
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<style type="text/css">
+		h2::before {
+			display: block;
+			content: '';
+			height:62px;
+		}
+		.content-box {
+			width:700px;
+			flex-grow: 1;
+			padding: 20px 100px 20px 400px;
+		}
+		.slide-box {
+			position:fixed;
+			width:300px;
+			border-right: 1px solid #6f6363;
+		}
+		@media screen and (max-width: 893px) {
+			.slide-box {
+				display: none;
+			}
+			.content-box {
+				padding: 20px;
+			}
+			.content-box img {
+				display: inline-block;
+				height: auto;
+				max-width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- 导航 -->
+	<div class="navbars">
+		<nav>
+			<!-- logo -->
+			<div class="nav-left">
+	            <a href="index.html" class="nav-logo"></a>
+	        </div>
+	        <!--  -->
+	        <ul>
+	        	<li class="nav-active"><a href="game.html">游戏介绍</a></li>
+	        	<li><a href="hero.html">英雄及背景</a></li>
+	        	<li><a href="">视频专区</a></li>
+	        </ul>
+	        <div class="nav-right">
+	        	<a href="#" class="nav-download nav-transition">登陆/注册</a>
+	        </div>
+		</nav>
+	</div>
+	<!-- end 导航-->
+	<section style="display: flex;flex-direction: row;justify-content:space-between;align-items: flex-start;padding-top: 62px;">
+		<div class="slide-box">
+			<p style="margin-left: 1em;">位置</p>
+			<ul>
+				<li><a href="#hero" style="display:block;padding: 5px 15px;">英雄信息</a></li>
+				<li><a href="#object" style="display:block;padding: 5px 15px;">物品信息</a></li>
+				<li><a href="#summoner" style="display:block;padding: 5px 15px;">召唤师技能</a></li>
+				<li><a href="#rune" style="display:block;padding: 5px 15px;">符文信息</a></li>
+				<li><a href="#gift" style="display:block;padding: 5px 15px;">天赋信息</a></li>
+			</ul>
+		</div>
+		<div class="content-box" >
+			<article>
+				<h2 id="hero">英雄信息</h2>
+				<img src="http://ossweb-img.qq.com/images/lol/web201310/newbie/newbie_22.jpg">
+				<p>俗语有云，“知己知彼，百战不殆”，所以，在游戏开始之后，先了解敌我双方的英雄信息总是没错的。用自己的优点来去打击对方的缺点，往往会取得事半功倍的效果。</p>
+				<p>阵容是起步的关键，如何搭配英雄阵容是一门大学问，对于初入英雄联盟的我们来说，可以先从常规配置的理解开始。一般情况下，队伍中的坦克型英雄会选择地图上路（俗称“上单”），法师型英雄会选择地图中路（俗称“中单”），高机动性英雄会选择在地图野区发育（俗称“打野”），射手型英雄（也称“ADC”）和辅助型英雄会选择地图下路（俗称“下路”）。</p>
+				<p>定位你的英雄，并且选择合适的阵容，了解英雄的技能以及发展方向，这都会使你在游戏中更加轻松。</p>
+			</article>
+			<article>
+				<h2 id="object">物品信息</h2>
+				<img src="http://ossweb-img.qq.com/images/lol/web201310/newbie/newbie_23.jpg">
+				<p>选择了合适的英雄和阵容后，让我们看看如何通过道具来强化自己的英雄，如果说选择英雄是迈向成功的第一步，那么正确的出装则能让你事半功倍。</p>
+				<p>在游戏中，召唤师可在道具商店购买或合成自己所需要的各类道具和装备，从而增强英雄的各项属性。从分类来说，道具一般分为“攻击”、“防御”、“法术”、“移动速度”、“消耗品”这几类。游戏中，系统会推荐一些常规出装以供玩家选择，如果你对使用的英雄了解不深，可以根据系统推荐来选择装备。当你对英雄有了一定的了解后，可以更加灵活地选择装备，满足不同的玩法。</p>
+			</article>
+			<article>
+				<h2 id="summoner">召唤师技能</h2>
+				<img src="http://ossweb-img.qq.com/images/lol/web201310/newbie/newbie_24.jpg">
+				<p>在游戏中有很多召唤师技能可供选择，但每场比赛只能选2个召唤师技能。这些技能对于战场中的形势有着直接影响，例如：召唤师可以治疗己方英雄、传送英雄至友方单位身边、提高己方防御塔的防御力等。召唤师的法术不需要消耗英雄的魔法值，但每次使用之间会有冷却时间。另外需要注意的是，某些召唤师技能需要在达到一定等级后才能使用，例如“治疗术”需要玩家的召唤师等级达到2级。</p>
+				<p>召唤师技能是补足英雄能力的最后一环，合适的技能可以瞬间改变战局，甚至能影响一局游戏的胜负。</p>
+			</article>
+			<article>
+				<h2 id="rune">符文信息</h2>
+				<img src="http://ossweb-img.qq.com/images/lol/web201310/newbie/newbie_25.jpg">
+				<p>符文系统是英雄联盟中非常有特色的系统，它的主要作用是：强化召唤师的各项能力（如血量、暴击、攻速等）。</p>
+				<p>召唤师可以在商店中根据自己操作英雄的类型和追求，选择不同的符文（需使用游戏币购买）来为自己的英雄基础属性提供加成效果；并在游戏大厅的符文系统（类似天赋系统）中对购买的符文进行镶嵌搭配设置。符文有四种颜色，分别是印记（红色）、符印（黄色）、雕文（蓝色）和精华（紫色），不同的符文类型在镶嵌时也要镶嵌到对应的符文槽里，在符文书每一页都有9个蓝槽、9个红槽、9个黄槽和3个紫槽供你镶嵌符文。在游戏中，只是购买了符文是不能对召唤师所选择的英雄有任何帮助的，你需要将符文镶嵌在符文页当中，才能使符文在游戏中产生作用。</p>
+				<p>符文是区别高级玩家的一个重要环节，同一局比赛中，如果对手有符文加成而你没有的话，很可能你将会输在起跑线上。针对各类英雄搭配使用不同的符文将会另您的英雄在游戏初期对线、游走、击杀等都具有一定的优势。</p>
+			</article>
+			<article>
+				<h2 id="gift">天赋信息</h2>
+				<img src="http://ossweb-img.qq.com/images/lol/web201310/newbie/newbie_26.jpg">
+				<p>你可以在游戏大厅的召唤者信息面板中看到自己的天赋树。目前天赋共分为“攻击”、“防御”、“通用”三个系，每系的终极天赋均为21点，召唤师等级每提升1级，就可以多获得一点天赋点，用以自由学习天赋，最多为30点，召唤师的天赋并非是固定的，根据你选择控制的英雄不同，你需要修改天赋以适应召唤师的需要，点击界面右下方的“重置天赋点”可以进行洗点。</p>
+				<p>“攻击”系天赋主要用来提高英雄的物理和法术攻击，适合偏重攻击的召唤师；“防御”系天赋主要用来提高英雄的物理、法术防御，以及抗打击和回复能力，适合偏重防御和回复的召唤师；“攻击”系天赋主要用来提升召唤师的其他能力，例如减少技能冷却时间。</p>
+			</article>
+		</div>
+	</section>
+	<footer>
+		<nav>
+			<ul>
+				<li><a target="_blank" href="http://lol.qq.com/">英雄联盟官网</a></li>
+				<li><a target="_blank" href="http://lolbox.duowan.com/staticPub/v3.1/playerSearch.html">战绩查询</a></li>
+				<li><a target="_blank" href="http://www.huya.com/g/lol">LOL直播</a></li>
+			</ul>
+		</nav>
+		<div style="text-align: center;">
+			<p>Copyright © 2017-2018 Battle of the canyons.</p>
+			<p>计算机应用技术班1531班王捷所有</p>
+		</div>
+	</footer>
+</body>
+</html>
