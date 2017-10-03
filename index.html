@@ -8,28 +8,27 @@
 	<link href="./css/swiper.css" rel="stylesheet">
 	<link href="./css/animate.min.css" rel="stylesheet">
 </head>
-<body id="top">
+<body>
 	<!-- 导航 -->
 	<div class="navbars">
 		<nav>
 			<!-- logo -->
 			<div class="nav-left">
-	            <a href="/" class="nav-logo"></a>
+	            <a href="index.html" class="nav-logo"></a>
 	        </div>
 	        <!--  -->
 	        <ul>
-	        	<li><a href="">英雄</a></li>
-	        	<li><a href="">图片</a></li>
-	        	<li><a href="">视频</a></li>
-	        	<li><a href="">资讯</a></li>
+	        	<li><a href="game.html">游戏介绍</a></li>
+	        	<li><a href="hero.html">英雄及背景</a></li>
+	        	<li><a href="">视频专区</a></li>
 	        </ul>
 	        <div class="nav-right">
-	        	<a href="http://down.qq.com/lol/dltools/LOL_V4.0.6.3_FULL_TDL_speeded_signed.exe" class="nav-download nav-transition">下载</a>
+	        	<a href="#" class="nav-download nav-transition">登陆/注册</a>
 	        </div>
 		</nav>
 	</div>
 	<!-- end 导航-->
-	<section class="section-home">
+	<section class="section-home bg-index">
 		<div class="section-home-video">
 			<div class="box-mask"></div>
 			<div class="vedio-alert model">
@@ -61,7 +60,7 @@
 	        <div class="swiper-button-prev swiper-button-white"></div>
         </div>
         <!-- end 图片轮播 -->
-		<div class="LOL-introduce">
+		<!-- <div class="LOL-introduce">
 			<h2>英雄联盟（League of Legends）</h2>
 			<p>由美国Riot Games开发，腾讯游戏运营的全新英雄对战网游。
 			英雄联盟的<br>
@@ -76,6 +75,20 @@
 			<br>
 			在游戏中，玩家将扮演一位召唤者，并选择你所信任的联盟国进入这个游戏的正义领域，为了控制瓦罗然的权利而奋战。在这个联盟中只有一条规则：胜者就是一切！
 			</p>
+		</div> -->
+		<div style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-between;align-items: flex-start;padding: 10px 30px;margin-bottom: -10px;margin-right: -10px;">
+			<div style="width: 400px;height: 400px;background-color: black;padding: 10px;margin-bottom: 10px;flex-grow: 1;margin-right: 10px;">
+				<h2>新闻公告</h2>
+				<p style="text-align: left;">
+					公告更新：维嘉薇恩加强 玉剑传说皮肤系列登场<br>
+					9月29号 免费英雄德莱尔斯提莫烬闪亮登场<br>
+					9月24日限时半价英雄皮肤公告<br>
+					9月10号更新公告：冠军之箭艾希登场！
+				</p>
+			</div>
+			<div style="width: 400px;height: 400px;background-color: black;padding: 10px;margin-bottom: 10px;flex-grow: 1;margin-right: 10px;">
+				<h2>活动中心</h2>
+			</div>
 		</div>
 	</section>
 	<section class="section-hero">
@@ -196,8 +209,8 @@
 	<footer>
 		<nav>
 			<ul>
-				<li><a target="_blank" href="http://lol.qq.com/">英雄联盟官网</a>|</li>
-				<li><a target="_blank" href="http://lolbox.duowan.com/staticPub/v3.1/playerSearch.html">战绩查询</a>|</li>
+				<li><a target="_blank" href="http://lol.qq.com/">英雄联盟官网</a></li>
+				<li><a target="_blank" href="http://lolbox.duowan.com/staticPub/v3.1/playerSearch.html">战绩查询</a></li>
 				<li><a target="_blank" href="http://www.huya.com/g/lol">LOL直播</a></li>
 			</ul>
 		</nav>
@@ -210,55 +223,5 @@
 <script src="./js/swiper.js"></script>
 <script src="./js/swiper.animate1.0.2.min.js"></script>
 <script src="./js/main.js"></script>
- <script>
- 	// 首页图片轮播
-    var swiper1 = new Swiper('.swiper-container', {
-        paginationClickable: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        spaceBetween: 30,
-        autoplay : 3000,
-        autoplayDisableOnInteraction : false,
-        preloadImages: false,
-        lazyLoading : true
-    });
-
-    var swiper2 = new Swiper('.hreo-turn', {
-	  onInit: function(swiper){ 
-	    swiperAnimateCache(swiper); //隐藏动画元素 
-	    swiperAnimate(swiper); //初始化完成开始动画
-	  }, 
-	  onSlideChangeEnd: function(swiper){ 
-	    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-	  },
-	  pagination : '.swiper-pagination',
-	  paginationClickable :true
-	});
-
-	var swiper3 = new Swiper('.play-turn', {
-        pagination: '.swiper-pagination',
-        effect: 'cube',
-        grabCursor: true,
-        cube: {
-            shadow: true,
-            slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.94
-        }
-    });
-
-    !function () {
-    	document.getElementById('watch').addEventListener("click", function () {
-			document.querySelector('.vedio-alert').style.display = "block";
-			document.querySelector('.section-home-video').style.display = "block";
-	    });
-
-    	document.getElementById('cls').addEventListener("click", function () {
-			document.querySelector('.vedio-alert').style.display = "none";
-			document.querySelector('.section-home-video').style.display = "none";
-			document.getElementById('video').load();
-    	});
-    }()
-</script>
 </body>
 </html>
