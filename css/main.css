@@ -279,7 +279,7 @@ section {
     height: 700px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(http://pic.90sjimg.com/back_pic/00/04/13/75/2143d331b10ce5d89a3c91bcac19ef49.jpg);
+    background-image: url(../images/bg-turn.jpg);
 }
 .hero-image {
     float: left;

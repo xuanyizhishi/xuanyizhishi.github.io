@@ -1,4 +1,5 @@
-// 首页图片轮播
+!function () {
+	// 首页图片轮播
     var swiper1 = new Swiper('.swiper-container', {
         paginationClickable: true,
         nextButton: '.swiper-button-next',
@@ -46,3 +47,4 @@
 			document.getElementById('video').load();
     	});
     }()
+}()
