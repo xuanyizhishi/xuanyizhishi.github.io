@@ -430,4 +430,7 @@ footer ul li a:hover{
     footer {
     	margin-bottom: 49px;
     }
+    .navbars {
+    	position: absolute;
+    }
 }
