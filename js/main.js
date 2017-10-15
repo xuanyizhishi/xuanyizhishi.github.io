@@ -2,13 +2,13 @@
 	// 首页图片轮播
     var swiper1 = new Swiper('.swiper-container', {
         paginationClickable: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        spaceBetween: 30,
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next',
+        spaceBetween: 0,
+        loop : true,
         autoplay : 3000,
-        autoplayDisableOnInteraction : false,
-        preloadImages: false,
-        lazyLoading : true
+        speed: 2000,
+        autoplayDisableOnInteraction : false
     });
 
     var swiper2 = new Swiper('.hreo-turn', {

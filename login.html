@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta charset="utf-8">
+	<title>登录/注册</title>
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+<body>
+	<div class="container-login">
+		<div class="wrapper-login">
+			<a href="index.html" class="nav-logo"></a>
+			<section class="section-login">
+				<div class="nav-login">
+					<div class="item active-item">登录</div>
+					<div class="item">注册</div>
+				</div>
+				<div class="replace-view active-view">
+					<input type="text" title="帐号" placeholder="手机号/邮箱/用户名" value="" class="input">
+					<input type="password" title="密码" placeholder="密码" value="" class="input">
+					<button>登录</button>
+				</div>
+				<div class="replace-view">
+					<input type="text" title="帐号" placeholder="手机号/邮箱/用户名" value="" class="input">
+					<input type="password" title="密码" placeholder="密码" value="" class="input">
+					<input type="password" title="确认密码" placeholder="确认密码" value="" class="input">
+					<button>注册</button>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<footer>
+		<nav>
+			<ul>
+				<li><a target="_blank" href="http://lol.qq.com/">英雄联盟官网</a></li>
+				<li><a target="_blank" href="http://lolbox.duowan.com/staticPub/v3.1/playerSearch.html">战绩查询</a></li>
+				<li><a target="_blank" href="http://www.huya.com/g/lol">LOL直播</a></li>
+			</ul>
+		</nav>
+		<div style="text-align: center;">
+			<p>Copyright © 2017-2018 Battle of the canyons.</p>
+			<p>计算机应用技术班1531班王捷所有</p>
+		</div>
+	</footer>
+
+<script>
+	window.onload = function () {
+		// 切换登录注册
+		var navLogin = document.querySelectorAll('.item');
+		var navs     = Array.prototype.slice.call(navLogin);
+		var views    = Array.prototype.slice.call(document.querySelectorAll('.replace-view'));
+		[].forEach.call(navLogin, function (item, index) {
+			item.addEventListener('click', function () {
+				this.className = 'item active-item';
+				navs[1 - index].className = 'item';
+				views[index].className = 'replace-view active-view';
+				views[1 - index].className = 'replace-view';
+			});
+		});
+	}
+</script>
+</body>
+</html>

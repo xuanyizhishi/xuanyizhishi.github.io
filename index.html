@@ -23,7 +23,7 @@
 	        	<li><a href="">视频专区</a></li>
 	        </ul>
 	        <div class="nav-right">
-	        	<a href="#" class="nav-download nav-transition">登陆/注册</a>
+	        	<a href="login.html" class="nav-download nav-transition">登陆/注册</a>
 	        </div>
 	        <!-- 移动端导航 -->
 	        <div class="nav-bottom">
@@ -38,8 +38,28 @@
 		</nav>
 	</div>
 	<!-- end 导航-->
-	<section class="section-home bg-index">
-		<div class="section-home-video">
+	<section class="section-home">
+		<!-- 图片轮播 -->
+		<div class="swiper-container">
+			<!-- 固定层 -->
+	        <div class="section-home-text">
+	        	<h2 class="typing" style="font-family: cursive;">峡谷之战</h2>
+	        	<button id="watch">watch it</button>
+	        </div>
+	        <!-- end 固定层 -->
+			<div class="swiper-wrapper">
+				<div class="swiper-slide bg-img"><img src="./images/bg_1.jpg"></div>
+				<div class="swiper-slide bg-img"><img src="./images/bg_2.jpg"></div>
+				<div class="swiper-slide bg-img"><img src="./images/bg_3.jpg"></div>
+				<div class="swiper-slide bg-img"><img src="./images/bg_4.jpg"></div>
+			</div>
+			<!-- 前进后退按钮 -->
+			<div class="swiper-button-prev"></div>
+    		<div class="swiper-button-next"></div>
+        </div>
+        <!-- end 图片轮播 -->
+        <!-- 视频弹出层 -->
+        <div class="section-home-video">
 			<div class="box-mask"></div>
 			<div class="vedio-alert model">
 				<button id="cls">关闭</button>
@@ -50,27 +70,10 @@
 	            </video>
 			</div>
         </div>
-        <div class="section-home-text">
-        	<h2 class="typing">峡谷之战</h2>
-        	<button id="watch">watch it</button>
-        </div>
+        <!-- end 视频弹出层 -->
 	</section>
 
 	<section class="section-introduce">
-		<img src="./images/font-magic.png" alt="英雄截图">
-		<!-- 图片轮播 -->
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<div data-background="./images/bg_1.jpg" class="swiper-slide swiper-lazy bg-img"></div>
-				<div data-background="./images/bg_2.jpg" class="swiper-slide swiper-lazy bg-img"></div>
-				<div data-background="./images/bg_3.jpg" class="swiper-slide swiper-lazy bg-img"></div>
-				<div data-background="./images/bg_4.jpg" class="swiper-slide swiper-lazy bg-img"></div>
-			</div>
-	        <!-- Add Arrows -->
-	        <div class="swiper-button-next swiper-button-white"></div>
-	        <div class="swiper-button-prev swiper-button-white"></div>
-        </div>
-        <!-- end 图片轮播 -->
 		<!-- <div class="LOL-introduce">
 			<h2>英雄联盟（League of Legends）</h2>
 			<p>由美国Riot Games开发，腾讯游戏运营的全新英雄对战网游。
@@ -87,17 +90,17 @@
 			在游戏中，玩家将扮演一位召唤者，并选择你所信任的联盟国进入这个游戏的正义领域，为了控制瓦罗然的权利而奋战。在这个联盟中只有一条规则：胜者就是一切！
 			</p>
 		</div> -->
-		<div style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-between;align-items: flex-start;padding: 10px 30px;margin-bottom: -10px;margin-right: -10px;">
-			<div style="width: 400px;height: 400px;background-color: black;padding: 10px;margin-bottom: 10px;flex-grow: 1;margin-right: 10px;">
+		<div style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-between;align-items: flex-start;padding: 10px 0;margin-bottom: -10px;margin-right: -50px;">
+			<div style="width: 400px;height: 400px;background-color: black;padding: 10px;margin-bottom: 10px;flex-grow: 1;margin-right: 50px;padding: 30px;">
 				<h2>新闻公告</h2>
-				<p style="text-align: left;">
-					公告更新：维嘉薇恩加强 玉剑传说皮肤系列登场<br>
-					9月29号 免费英雄德莱尔斯提莫烬闪亮登场<br>
-					9月24日限时半价英雄皮肤公告<br>
-					9月10号更新公告：冠军之箭艾希登场！
+				<p style="text-align: left;text-decoration: underline;">
+					<a href="#">公告更新：维嘉薇恩加强 玉剑传说皮肤系列登场</a><br><br>
+					<a href="#">9月29号 免费英雄德莱尔斯提莫烬闪亮登场</a><br><br>
+					<a href="#">9月24日限时半价英雄皮肤公告</a><br><br>
+					<a href="#">9月10号更新公告：冠军之箭艾希登场！</a>
 				</p>
 			</div>
-			<div style="width: 400px;height: 400px;background-color: black;padding: 10px;margin-bottom: 10px;flex-grow: 1;margin-right: 10px;">
+			<div style="width: 400px;height: 440px;background-color: black;padding: 10px;margin-bottom: 10px;flex-grow: 1;margin-right: 50px;">
 				<h2>活动中心</h2>
 			</div>
 		</div>
