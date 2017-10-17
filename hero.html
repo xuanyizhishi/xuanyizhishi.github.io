@@ -7,8 +7,35 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 	<style type="text/css">
 		.bg-map {
-		    background-image: url(./images/module_1.jpg);
-		    background-position: right top;
+			height: 100%;
+		    background-image: url(./images/bg-map.png);
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		    flex-grow: 7
+		}
+		.slide {
+			height: 100%;
+			flex-grow: 1;
+			background-color: #393D49;
+			padding-top: 62px;
+			overflow-x: hidden;
+			overflow-y: auto;
+		}
+		.item-slide {
+			width: 100%;
+			height: 36px;
+			line-height: 36px
+
+		}
+		.item-slide a {
+			display: block;
+			padding: 0 20px
+		}
+		.item-slide a:hover {
+			color: #7d7d7d
+		}
+		.container {
+			max-width: 700px;
 		}
 	</style>
 </head>
@@ -20,7 +47,7 @@
 			<div class="nav-left">
 	            <a href="index.html" class="nav-logo"></a>
 	        </div>
-	        <!--  -->
+	        <!-- end logo -->
 	        <ul>
 	        	<li><a href="game.html">游戏介绍</a></li>
 	        	<li><a href="hero.html">英雄及背景</a></li>
@@ -42,8 +69,40 @@
 		</nav>
 	</div>
 	<!-- end 导航-->
-	<section class="section-home bg-map">
-		<div class=""></div>
+	<section style="display: flex;flex-flow: row wrap;align-items: flex-start;min-height: 698px;position: relative;height: 100vh;">
+		<div class="slide">
+	        <div class="item-slide"><a>峡谷简介</a></div>
+	        <div class="item-slide"><a>上单</a></div>
+	        <div class="item-slide"><a>中单</a></div>
+	        <div class="item-slide"><a>下路</a></div>
+	        <div class="item-slide"><a>打野</a></div>
+	        <div class="item-slide"><a>泉水守卫者</a></div>
+	        <div class="item-slide"><a>水晶塔</a></div>
+	        <div class="item-slide"><a>防御塔</a></div>
+	        <div class="item-slide"><a>中央水晶枢纽</a></div>
+	        <div class="item-slide"><a>野区</a></div>
+		</div>
+		<div class="bg-map">
+			<!-- 显示内容区域 -->
+			<div class="layer">
+				<div class="mask"></div>
+				<div class="alert">
+					<div class="container">
+						<div class="title">峡谷简介</div>
+						<div class="content">
+							最新潮最威严的战场当属召唤师峡谷。有三条不同的道路贯穿整个战场，选择敌人最薄弱的一条发动进攻。与你的友军一起进攻敌人的基地，然后摧毁他们的水晶枢纽!
+
+							召唤师峡谷位于弗雷尔卓德和一座偏僻的森林之间。召唤师峡谷是瓦罗兰大陆上一个为数不多的，到处充斥着魔法力量的地方，使之成为一个受追求魔法者欢迎的地方。这里的魔法能量是如此的大，改变了这里的生物。这里生存着巨大的青蛙，双头狼，变色龙，有角的兔子和蝴蝶。这个地方也吸引了龙。而纳什男爵也再度出现，这是一条巨大的蛇形生物，很多人认为它已经死了几个世纪，它污染着周围的土地。
+
+							在符文大陆期间，许多的符文之战发生在召唤师峡谷。
+						</div>
+						<div class="btn-group">
+							<button class="cancel">确定</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 	<footer>
 		<nav>
@@ -58,5 +117,15 @@
 			<p>计算机应用技术班1531班王捷所有</p>
 		</div>
 	</footer>
+<script>
+	window.onload = function () {
+		document.querySelector('.slide a').addEventListener('click', function () {
+			document.querySelector('.layer').style.display = 'block';
+		});
+		document.querySelector('.cancel').addEventListener('click', function () {
+			document.querySelector('.layer').style.display = 'none';
+		});
+	}
+</script>
 </body>
 </html>

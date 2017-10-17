@@ -28,6 +28,19 @@
 				</div>
 			</section>
 		</div>
+		<div class="layer">
+			<div class="mask"></div>
+			<div class="alert">
+				<div class="container" style="width: 260px;">
+					<div class="title">提示</div>
+					<div class="content">登录成功</div>
+					<div class="btn-group">
+						<button onclick="location.href = 'index.html'">确定</button>
+						<button class="cancel">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<footer>
@@ -46,7 +59,7 @@
 
 <script>
 	window.onload = function () {
-		// 切换登录注册
+		// 绑定所有按钮点击事件
 		var navLogin = document.querySelectorAll('.item');
 		var navs     = Array.prototype.slice.call(navLogin);
 		var views    = Array.prototype.slice.call(document.querySelectorAll('.replace-view'));
@@ -57,6 +70,15 @@
 				views[index].className = 'replace-view active-view';
 				views[1 - index].className = 'replace-view';
 			});
+		});
+		[].forEach.call(document.querySelectorAll('.replace-view button'), function (item) {
+			item.addEventListener('click', function () {
+				document.querySelector('.layer').style.display = 'block';
+				document.querySelector('.layer .content').innerHTML = this.textContent === '登录' ?  '登录成功' : '注册成功';
+			});
+		});
+		document.querySelector('.cancel').addEventListener('click', function () {
+			document.querySelector('.layer').style.display = 'none';
 		});
 	}
 </script>

@@ -1,35 +1,35 @@
 html {
-    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif
 }
 body {
     color: #f0edf2;
-    background-color: rgba(40,53,79,.9);
+    background-color: rgba(40,53,79,.9)
 }
 body,article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
     display: block;
-    margin: 0;
+    margin: 0
 }
 button {
-    outline: none;
+    outline: none
 }
 ul {
-    list-style: none;
+    list-style: none
 }
 footer {
     position: relative;
     font-size: 12px;
     background: #202020;
-    padding: 30px 50px;
+    padding: 30px 50px
 }
 a {
     text-decoration: none;
-    color: #fff;
+    color: #fff
 }
 section {
     display: block;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    overflow: hidden
 }
 .navbars {
 	position: absolute;
@@ -37,20 +37,20 @@ section {
     width: 100%;
     height: 62px;
     display: block;
-    z-index: 97;
+    z-index: 97
 }
 .navbars nav {
 	position: relative;
 	height: 62px;
 	background-color: transparent;
-	z-index: 96;
+	z-index: 96
 }
 .navbars ul {
     line-height: 1.6;
     height: 100%;
     padding: 0 50px;
     margin: 0;
-    font-size: 0;
+    font-size: 0
 }
 /* 移动端导航栏 */
 .nav-bottom {
@@ -62,7 +62,7 @@ section {
     height: 49px;
     line-height: 49px;
     background-color: rgba(40,53,79,.9);
-    box-shadow: 0 -1px rgba(0,0,0,0.1), 0 -2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 -1px rgba(0,0,0,0.1), 0 -2px 10px rgba(0,0,0,0.1)
 }
 .opt {
 	float: left;
@@ -71,26 +71,26 @@ section {
     flex-wrap: nowrap;
     margin: 0;
     width: 100%;
-    text-align: center;
+    text-align: center
 }
 .opt a {
     line-height: 49px;
     color: rgba(255,255,255,.85);
     cursor: pointer;
-    flex-grow: 1;
+    flex-grow: 1
 }
 /* end 移动端导航栏 */
 .navbars .nav-left {
 	float: left;
     font-size: 0;
-    margin: 0;
+    margin: 0
 }
 .navbars .nav-right {
 	position: absolute;
 	height: 62px;
     right: 0;
     top: 0;
-    padding: 8px 14px;
+    padding: 8px 14px
 }
 .navbars .nav-download {
 	background-color: #4CAF50;
@@ -100,16 +100,16 @@ section {
 	text-align: center;
 	display: inline-block;
 	font-size: 12px;
-	cursor: pointer;
+	cursor: pointer
 }
 .nav-download:hover {
-	border-radius:25px;
+	border-radius:25px
 }
 .navbars .nav-transition {
 	transition: border-radius 1s;
 	-moz-transition: border-radius 1s;	/* Firefox 4 */
 	-webkit-transition: border-radius 1s;	/* Safari 和 Chrome */
-	-o-transition: border-radius 1s;	/* Opera */
+	-o-transition: border-radius 1s	/* Opera */
 }
 .nav-logo{
     display: inline-block;
@@ -117,14 +117,14 @@ section {
 	height: 62px;
 	background-repeat: no-repeat;
     background-position: center center;
-	background-image: url(../images/logo.png);
+	background-image: url(../images/logo.png)
 }
 .navbars ul li {
 	display: inline-block;
-	height: 100%;
+	height: 100%
 }
 .navbars ul li:hover {
-	opacity: 0.5;
+	opacity: 0.5
 }
 .navbars ul li a {
 	position: relative;
@@ -133,10 +133,10 @@ section {
 	color: rgba(255,255,255,.85);
 	font-size: 17px;
     min-width: 99px;
-    padding-top: 15px;
+    padding-top: 15px
 }
 /* video */
-.section-home-video {
+.section-home-video, .layer {
 	position: fixed;
     top: 0;
     right: 0;
@@ -144,26 +144,26 @@ section {
     left: 0;
     overflow: hidden;
     display: none;
-    z-index: 99;
+    z-index: 99
 }
-.box-mask {
+.box-mask, .mask {
     width: 100%;
     height: 100%;
     opacity: 0.5;
-    filter:alpha(opacity=50);
-    background:black;
-    z-index: 100;
+    filter: alpha(opacity=50);
+    background: rgb(0, 0, 0);
+    z-index: 100
 }
-.vedio-alert {
+.vedio-alert, .alert {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
     z-index: 101;
-    display: none;
+    display: none
 }
-.vedio-alert video {
+.vedio-alert video, .container {
     clear: both;
     display: block;
     margin: auto;
@@ -171,18 +171,18 @@ section {
     height: 568px;
     position: relative;
 	top: 50%;
-	transform: translateY(-50%);
+	transform: translateY(-50%)
 }
 .model {
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: auto
 }
 video::-webkit-media-controls-enclosure {
-    width: fit-content;
+    width: fit-content
 }
 .section-home-video>video {
 	position: absolute;
-    display: block;
+    display: block
 }
 #cls {
     position: absolute;
@@ -192,16 +192,16 @@ video::-webkit-media-controls-enclosure {
     font-size: 30px;
     background-color: inherit;
     border: none;
-    cursor: pointer;
+    cursor: pointer
 }
 #cls:hover {
     background-color: #fff;
     color: black;
-    border-radius: 25px;
+    border-radius: 25px
 
 }
 #cls:active {
-    padding: 0;
+    padding: 0
 }
 #watch {
     padding: 20px 110px;
@@ -215,10 +215,10 @@ video::-webkit-media-controls-enclosure {
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
-    background-color: #dbbb7a;
+    background-color: #dbbb7a
 }
 #watch:hover {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.5)
 }
 /* end video */
 /*1vh = 1%*/
@@ -228,7 +228,7 @@ video::-webkit-media-controls-enclosure {
     min-height: 420px;
     height: 100vh;
     background-position: top;
-    background-size: cover;
+    background-size: cover
 }
 .section-home-text {
     position: absolute;
@@ -236,31 +236,31 @@ video::-webkit-media-controls-enclosure {
     height: 300px;
     width: 100%;
     text-align: center;
-    z-index: 2;
+    z-index: 2
 }
 
 /* 此处开始为打字动画 */
 @keyframes typing { 
     from { 
-        width: 0;
+        width: 0
     }
 }
 @keyframes blink { 
     0% {
-        border-right: .1em solid;
+        border-right: .1em solid
     }
     50% { 
-        border-color: transparent; 
+        border-color: transparent
     }
     100% {
-        border: none;
+        border: none
     }
 }
 
 .typing {
     overflow: hidden;
     animation: typing 4s steps(4,end) forwards,
-    blink .5s step-end 10;
+    blink .5s step-end 10
 }
 /* end 打字动画 */
 
@@ -274,50 +274,50 @@ video::-webkit-media-controls-enclosure {
     margin: 42px auto;
     background-image: linear-gradient(to bottom right, rgba(255,232,184,1), rgba(175,133,48,1));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent
 }
 .section-introduce, .section-hero {
     position: relative;
     overflow: hidden;
-    text-align: center;
+    text-align: center
 }
 .bg-img>img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 100%
 }
 .LOL-introduce {
     padding: 30px;
     font-size: 24px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(../images/bg-introduce.jpg);
+    background-image: url(../images/bg-introduce.jpg)
 }
 .LOL-introduce h2 {
     color: #fdee92;
-    text-shadow: 0 4px 5px rgb(46, 89, 180);
+    text-shadow: 0 4px 5px rgb(46, 89, 180)
 }
 .section-hero {
     height: 700px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(../images/bg-turn.jpg);
+    background-image: url(../images/bg-turn.jpg)
 }
 .hero-image {
     float: left;
     width: 30%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: contain
 }
 .hero-introduce {
     text-align: center;
     padding-top: 20px;
     font-size: 30px;
-    font-style: italic;
+    font-style: italic
 }
 .hero-introduce p {
-    text-shadow: 10px 10px 5px #1d1365;
+    text-shadow: 10px 10px 5px #1d1365
 }
 .hero-introduce>span {
     background: #00A483;
@@ -325,29 +325,29 @@ video::-webkit-media-controls-enclosure {
     font-size: 20px;
     line-height: 30px;
     margin-right: 15px;
-    padding: 5px;
+    padding: 5px
 }
 .hero-introduce>ul {
     font-size: 15px;
     width: 200px;
     margin: 0 auto;
-    text-align: left;
+    text-align: left
 }
 .hero-introduce>ul li{
-    vertical-align: middle;
+    vertical-align: middle
 }
 .how-to-play {
     font-size: 24px;
-    height: 700px;
+    height: 700px
 }
 .bg-1 {
-    background-image: url(../images/module_1.jpg);
+    background-image: url(../images/module_1.jpg)
 }
 .bg-2 {
-    background-image: url(../images/module_2.jpg);
+    background-image: url(../images/module_2.jpg)
 }
 .bg-3 {
-    background-image: url(../images/module_3.jpg);
+    background-image: url(../images/module_3.jpg)
 }
 .bg-blur {
     float: left;
@@ -360,7 +360,7 @@ video::-webkit-media-controls-enclosure {
     -moz-filter: blur(2px);
     -o-filter: blur(2px);
     -ms-filter: blur(2px);
-    filter: blur(2px);
+    filter: blur(2px)
 }
 .how-to-play .content {
     position:absolute;
@@ -372,31 +372,29 @@ video::-webkit-media-controls-enclosure {
     height: 100%;
     text-align: left;
     overflow: hidden;
-    color: #dac68c;
+    color: #dac68c
 }
+/* login.html */
 .container-login {
-    width: 100%;
-    height: 100%;
-    min-width: 960px;
     min-height: 770px;
-    background: url(../images/bg-login.png) top/cover no-repeat;
+    background: url(../images/bg-login.png) top/cover no-repeat
 }
 .wrapper-login {
     margin: 0 auto;
     padding: 60px 0;
     width: 380px;
-    text-align: center;
+    text-align: center
 }
 .section-login {
     padding: 10px 0;
     box-shadow: 0 0 10px rgba(0,0,0,.3);
-    background: hsla(0,0%,100%,.95);
+    background: hsla(0,0%,100%,.95)
 }
 .replace-view {
     display: none;
     margin: 0 auto;
     padding: 30px 0;
-    width: 330px;
+    width: 330px
 }
 .replace-view .input {
     box-sizing: border-box;
@@ -406,7 +404,7 @@ video::-webkit-media-controls-enclosure {
     height: 40px;
     line-height: 40px;
     font-size: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 30px
 }
 .replace-view button {
     box-sizing: border-box;
@@ -419,21 +417,24 @@ video::-webkit-media-controls-enclosure {
     font-size: 16px;
     color: #fff;
     cursor: pointer;
-    background-color: #3f9f5f;
+    background-color: #3f9f5f
 }
-.active-item {
+.replace-view button:hover, .btn-group button:hover {
+    background-color: #0d7d32
+}
+.active-item, .item:hover {
     color: #3f9f5f;
-    border-bottom: 3px solid #3f9f5f;
+    border-bottom: 3px solid #3f9f5f
 }
 .active-view {
-    display: block;
+    display: block
 }
 .nav-login {
     width: 100%;
     border-bottom: 1px solid #6d6c6b;
     height: 60px;
     line-height: 60px;
-    color: #615858;
+    color: #615858
 }
 .nav-login .item {
     float: left;
@@ -441,26 +442,71 @@ video::-webkit-media-controls-enclosure {
     height: 60px;
     font-size: 16px;
     text-align: center;
-    cursor: pointer;
+    cursor: pointer
 }
+.alert {
+    display: block
+}
+.container {
+    color: #333;
+    height: auto;
+    background-color: #fff;
+    -webkit-background-clip: content;
+    border-radius: 2px;
+    box-shadow: 1px 1px 50px rgba(0,0,0,.3)
+}
+.title {
+    padding: 0 80px 0 20px;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    overflow: hidden;
+    background-color: #F8F8F8;
+    border-radius: 2px 2px 0 0
+}
+.content {
+    position: relative;
+    padding: 20px;
+    line-height: 24px;
+    word-break: break-all;
+    overflow: hidden;
+    font-size: 14px;
+    overflow-x: hidden;
+    overflow-y: auto
+}
+.btn-group {
+    text-align: right;
+    padding: 0 15px 12px;
+    pointer-events: auto
+}
+.btn-group button {
+    box-sizing: border-box;
+    border: 0;
+    padding: 8px 15px;
+    color: #fff;
+    background-color: #3f9f5f;
+    border-radius: 3px
+}
+/* end login */
 footer ul {
 	text-align: center;
     padding: 30px 0; 
-    border-bottom: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px solid rgba(255,255,255,.15)
 }
 footer ul li {
     display: inline-block;
     height: 100%;
-    color: #ccc;
+    color: #ccc
 }
 footer ul li:not(:last-child)::after {
-    content: "|";
+    content: "|"
 }
 footer ul li a, footer ul li {
-    padding-right: 10px;
+    padding-right: 10px
 }
 footer ul li a:hover{
-    opacity:0.5;
+    opacity:0.5
 }
 /* 响应式设计 */
 @media only screen and (max-width: 673px) {
@@ -468,32 +514,35 @@ footer ul li a:hover{
         position: absolute;
         height: 160px;
         left: 10%;
-        bottom: 100px;
+        bottom: 100px
     }
     .hero-introduce {
-        font-size: 20px;
+        font-size: 20px
     }
     .hero-introduce>ul {
         position: absolute;
         right: 0;
-        bottom: 100px;
+        bottom: 100px
     }
     .how-to-play .content {
-        width: 70%;
+        width: 70%
     }
     #watch, .navbars ul {
-    	display: none !important;
+    	display: none !important
     }
     .LOL-introduce {
-        text-align: left;
+        text-align: left
     }
     .nav-bottom {
-    	display: block;
+    	display: block
     }
     footer {
-    	padding-bottom: 49px;
+    	padding-bottom: 49px
     }
     .navbars {
-    	position: absolute;
+    	position: absolute
+    }
+    .wrapper-login {
+        width: 100%
     }
 }
