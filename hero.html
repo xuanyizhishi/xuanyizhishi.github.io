@@ -88,14 +88,8 @@
 				<div class="mask"></div>
 				<div class="alert">
 					<div class="container">
-						<div class="title">峡谷简介</div>
-						<div class="content">
-							最新潮最威严的战场当属召唤师峡谷。有三条不同的道路贯穿整个战场，选择敌人最薄弱的一条发动进攻。与你的友军一起进攻敌人的基地，然后摧毁他们的水晶枢纽!
-
-							召唤师峡谷位于弗雷尔卓德和一座偏僻的森林之间。召唤师峡谷是瓦罗兰大陆上一个为数不多的，到处充斥着魔法力量的地方，使之成为一个受追求魔法者欢迎的地方。这里的魔法能量是如此的大，改变了这里的生物。这里生存着巨大的青蛙，双头狼，变色龙，有角的兔子和蝴蝶。这个地方也吸引了龙。而纳什男爵也再度出现，这是一条巨大的蛇形生物，很多人认为它已经死了几个世纪，它污染着周围的土地。
-
-							在符文大陆期间，许多的符文之战发生在召唤师峡谷。
-						</div>
+						<div class="title"></div>
+						<div class="content"></div>
 						<div class="btn-group">
 							<button class="cancel">确定</button>
 						</div>
@@ -119,8 +113,24 @@
 	</footer>
 <script>
 	window.onload = function () {
-		document.querySelector('.slide a').addEventListener('click', function () {
-			document.querySelector('.layer').style.display = 'block';
+		var data = ['最新潮最威严的战场当属召唤师峡谷。有三条不同的道路贯穿整个战场，选择敌人最薄弱的一条发动进攻。与你的友军一起进攻敌人的基地，然后摧毁他们的水晶枢纽!召唤师峡谷位于弗雷尔卓德和一座偏僻的森林之间。召唤师峡谷是瓦罗兰大陆上一个为数不多的，到处充斥着魔法力量的地方，使之成为一个受追求魔法者欢迎的地方。这里的魔法能量是如此的大，改变了这里的生物。这里生存着巨大的青蛙，双头狼，变色龙，有角的兔子和蝴蝶。这个地方也吸引了龙。而纳什男爵也再度出现，这是一条巨大的蛇形生物，很多人认为它已经死了几个世纪，它污染着周围的土地。在符文大陆期间，许多的符文之战发生在召唤师峡谷。'
+		,'上单英雄主要以近战的战士，生存能力强或者机动性强的英雄'
+		,'中单是队伍的核心输出，以法师为主'
+		,'下路一般为双人组合，射手加辅助的组合'
+		,'以打野怪发育，主要是帮助线上队友gank，带动着队伍的节奏'
+		,'整个峡谷最厉害的防御武器没有之一，不少的召唤师想在它的庇护下杀人但都是有来无回'
+		,'击碎敌方的水晶塔可以派出强大的超级士兵'
+		,'阻止线上兵线及英雄前进的强力防御武器，每个阵营的防御塔数量是一样的.'
+		,'犹如心脏一样重要，摧毁敌方的中央水晶枢纽赢取胜利吧！'
+		,''
+		];
+
+		Array.prototype.forEach.call(document.querySelectorAll('.slide a'), function (item, index) {
+			item.addEventListener('click', function () {
+				document.querySelector('.title').innerHTML = this.textContent;
+				document.querySelector('.content').innerHTML = data[index];
+				document.querySelector('.layer').style.display = 'block';
+			})
 		});
 		document.querySelector('.cancel').addEventListener('click', function () {
 			document.querySelector('.layer').style.display = 'none';

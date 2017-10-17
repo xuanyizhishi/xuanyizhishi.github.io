@@ -74,7 +74,7 @@
 		[].forEach.call(document.querySelectorAll('.replace-view button'), function (item) {
 			item.addEventListener('click', function () {
 				document.querySelector('.layer').style.display = 'block';
-				document.querySelector('.layer .content').innerHTML = this.textContent === '登录' ?  '登录成功' : '注册成功';
+				document.querySelector('.layer .content').innerHTML =  this.textContent === '登录' ?  '登录成功' : '注册成功';
 			});
 		});
 		document.querySelector('.cancel').addEventListener('click', function () {
