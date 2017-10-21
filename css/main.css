@@ -470,9 +470,9 @@ video::-webkit-media-controls-enclosure {
 .content {
     position: relative;
     padding: 20px;
+    max-height: 372px;
     line-height: 24px;
     word-break: break-all;
-    overflow: hidden;
     font-size: 14px;
     overflow-x: hidden;
     overflow-y: auto
