@@ -3,49 +3,93 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<meta charset="utf-8">
-	<title>英雄及背景</title>
+	<title>英雄介绍</title>
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 	<style type="text/css">
-		.bg-map {
-			height: 100%;
-		    background-image: url(./images/bg-map.png);
-		    background-repeat: no-repeat;
-		    background-size: cover;
-		    flex-grow: 11
+		body {
+			background-color: #08111a;
 		}
-		.slide {
-			height: 100%;
-			flex-grow: 1;
-			background-color: #393D49;
-			overflow-x: hidden;
-			overflow-y: auto
-		}
-		.item-slide {
-			width: 100%;
-			line-height: 36px
-		}
-		.item-slide a {
-			display: block;
-			padding: 0 20px;
+		.input-search {
+			width: 208px;
 			height: 36px;
+			margin: 30px auto 0;
+			background: #000306;
+			border: 2px #785a28 solid;
 		}
-		.item-slide a:hover, #select dd:hover {
-			color: #7d7d7d;
+		.input-search::after {
+			display: block;
+		    content: '';
+		    height: 66px;
+		    border-bottom: 1px #1e282d solid;
+		}
+		.input-search input {
+			float: left;
+			width: 152px;
+		    height: 20px;
+		    line-height: 20px;
+		    margin-top: 8px;
+		    background: #000306;
+		    border: 0 none;
+		    font-size: 16px;
+		    color: #9c9788;
+		    outline: none;
+		}
+		.icon-search, .icon-close {
+			width: 20px;
+		    height: 20px;
+		    margin: 9px 4px 0;
+		    background-size: 20px 20px;
+		    background-repeat: no-repeat;
+		}
+		.icon-search {
+			float: left;
+    		background-image: url(./fonts/search.svg);
+		}
+		.icon-close {
+			float: right;
+    		background-image: url(./fonts/close.svg);
+		}
+		.items-filter::before {
+			display: block;
+		    content: '';
+		    height: 31px;
+		}
+		.items-filter ul li {
+			font-size: 16px;
+			height: 22px;
+			padding: 20px;
+			color: #9c9789;
+		}
+		.items-filter ul li:hover {
 			cursor: pointer;
+			background-color: #1e2328;
 		}
-		.container {
-			max-width: 700px;
-			max-height: 500px;
+		.items-filter ul {
+			padding: 0;
 		}
-		.font-down {
-			display: inline-block;
-			position: relative;
-			left: 80px; 
-			top: 5px;
-			background-size: 20px 20px;
-			background-image: url(./images/more_unfold.svg);
+		.icon-check {
+			float: left;
+			width: 16px;
+			height: 16px;
+			margin: 1px 20px 1px 1px;
+			border: 2px #785a28 solid;
+		}
+		.icon-select {
+			position: absolute;
 			width: 20px;
 			height: 20px;
+			left: 22px;
+			z-index: 99;
+			display: none;
+			background-size: 16px 16px;
+		    background-repeat: no-repeat;
+		    background-image: url(./fonts/selected.svg);
+		}
+		.flex-content {
+			display: flex;
+		    flex-direction: row;
+		    justify-content:space-between;
+		    align-items: flex-start;
 		}
 	</style>
 </head>
@@ -57,10 +101,11 @@
 			<div class="nav-left">
 	            <a href="index.html" class="nav-logo"></a>
 	        </div>
-	        <!-- end logo -->
+	        <!--  -->
 	        <ul>
 	        	<li><a href="game.html">游戏介绍</a></li>
-	        	<li><a href="hero.html">英雄及背景</a></li>
+	        	<li><a href="guide.html">新手指引</a></li>
+	        	<li><a href="hero.html">英雄介绍</a></li>
 	        	<li><a href="">视频专区</a></li>
 	        </ul>
 	        <div class="nav-right">
@@ -71,7 +116,8 @@
 	        	<div class="opt">
 	        		<a href="index.html">首页</a>
 	        		<a href="game.html">游戏介绍</a>
-	        		<a href="hero.html">英雄及背景</a>
+	        		<a href="guide.html">新手指引</a>
+	        		<a href="hero.html">英雄介绍</a>
 	        		<a href="">视频专区</a>
 	        	</div>
 	        </div>
@@ -79,119 +125,54 @@
 		</nav>
 	</div>
 	<!-- end 导航-->
-	<section style="display: flex;flex-flow: row wrap;align-items: flex-start;min-height: 720px;position: relative;top: 62px;height: 120vh;">
-		<div class="slide">
-	        <div class="item-slide"><a>峡谷简介</a></div>
-	        <div class="item-slide"><a>上单</a></div>
-	        <div class="item-slide"><a>中单</a></div>
-	        <div class="item-slide"><a>下路</a></div>
-	        <div class="item-slide"><a>打野</a></div>
-	        <div class="item-slide"><a>泉水守卫者</a></div>
-	        <div class="item-slide"><a>水晶塔</a></div>
-	        <div class="item-slide"><a>防御塔</a></div>
-	        <div class="item-slide"><a>中央水晶枢纽</a></div>
-	        <div class="item-slide">
-	        	<a><span>野区</span><i class="font-down"></i></a>
-	        	<dl style="display: none;" id="select">
-	        		<dd>大蛤蟆</dd>
-	        		<dd>红buff</dd>
-	        		<dd>巨狼</dd>
-	        		<dd>巨龙</dd>
-	        		<dd>蓝buff</dd>
-	        		<dd>男爵</dd>
-	        		<dd>石头怪</dd>
-	        		<dd>幽冥4人组</dd>
-	        	</dl>
-	        </div>
-		</div>
-		<div class="bg-map">
-			<!-- 显示内容区域 -->
-			<div class="layer">
-				<div class="mask"></div>
-				<div class="alert">
-					<div class="container">
-						<div class="title"></div>
-						<div class="content"></div>
-						<div class="btn-group">
-							<button class="cancel">确定</button>
-						</div>
-					</div>
-				</div>
+
+	<section class="flex-slide">
+		<div class="slide-box">
+			<!-- 搜索框 -->
+			<div class="input-search">
+				<i class="icon-search"></i>
+				<input type="text" placeholder="搜索" id="search" maxlength="8">
+				<i class="icon-close"></i>
+			</div>
+			<!-- 过滤选项 -->
+			<div class="items-filter">
+				<ul>
+					<li><span>刺客</span><i class="icon-check"></i><i class="icon-select"></i></li>
+					<li><span>战士</span><i class="icon-check"></i><i class="icon-select"></i></li>
+					<li><span>法师</span><i class="icon-check"></i><i class="icon-select"></i></li>
+					<li><span>射手</span><i class="icon-check"></i><i class="icon-select"></i></li>
+					<li><span>辅助</span><i class="icon-check"></i><i class="icon-select"></i></li>
+					<li><span>坦克</span><i class="icon-check"></i><i class="icon-select"></i></li>
+				</ul>
 			</div>
 		</div>
-	</section>
-	<footer>
-		<nav>
-			<ul>
-				<li><a target="_blank" href="">英雄联盟官网</a></li>
-				<li><a target="_blank" href="">战绩查询</a></li>
-				<li><a target="_blank" href="">LOL直播</a></li>
-			</ul>
-		</nav>
-		<div style="text-align: center;">
-			<p>Copyright © 2017-2018 Battle of the canyons.</p>
-			<p>计算机应用技术班1531班王捷所有</p>
+		<!-- 英雄列表 -->
+		<div class="flex-content">
+			
 		</div>
-	</footer>
-<script>
-	window.onload = function () {
+	</section>
 
-		var data = [{content: '最新潮最威严的战场当属召唤师峡谷。有三条不同的道路贯穿整个战场，选择敌人最薄弱的一条发动进攻。与你的友军一起进攻敌人的基地，然后摧毁他们的水晶枢纽!<br/>召唤师峡谷位于弗雷尔卓德和一座偏僻的森林之间。召唤师峡谷是瓦罗兰大陆上一个为数不多的，到处充斥着魔法力量的地方，使之成为一个受追求魔法者欢迎的地方。这里的魔法能量是如此的大，改变了这里的生物。这里生存着巨大的青蛙，双头狼，变色龙，有角的兔子和蝴蝶。这个地方也吸引了龙。而纳什男爵也再度出现，这是一条巨大的蛇形生物，很多人认为它已经死了几个世纪，它污染着周围的土地。<br/>在符文大陆期间，许多的符文之战发生在召唤师峡谷。'}
-		,{content: '上单英雄主要以近战的战士，生存能力强或者机动性强的英雄'}
-		,{content: '中单是队伍的核心输出，以法师为主'}
-		,{content: '下路一般为双人组合，射手加辅助的组合'}
-		,{content: '以打野怪发育，主要是帮助线上队友gank，带动着队伍的节奏'}
-		,{content: '整个峡谷最厉害的防御武器没有之一，不少的召唤师想在它的庇护下杀人但都是有来无回', img: './images/泉水守卫者.png'}
-		,{content: '击碎敌方的水晶塔可以派出强大的超级士兵', img: './images/水晶塔.png'}
-		,{content: '阻止线上兵线及英雄前进的强力防御武器，每个阵营的防御塔数量是一样的.', img: './images/防御塔.png'}
-		,{content: '犹如心脏一样重要，摧毁敌方的中央水晶枢纽赢取胜利吧！', img: './images/中央水晶枢纽.png'}
-		,{} // 野区
-		,{content: '由小蛤蟆进化而来，身体四周散发着恶臭，住在阴冷潮湿的角落，击杀它攻击带有持续魔法伤害', img: './images/201406181137289400.png'}
-		,{content: '击杀后获得"余烬之冠"的增益效果，这个增益让你的攻击在3秒内造成5-56点真实伤害，并造成5%-10%的减速效果。(持续时间:120秒)', img: './images/201406181137305116.png'}
-		,{content: '窝居在山洞里，当有人经过时就会出来示威，保护自己的地盘.击杀获得移速加成', img: ''}
-		,{content: '巨龙的实力仅次于男爵有极强的生存能力击杀获得大量的金钱', img: './images/201406181137455548.png'}
-		,{content: '击杀后获得"洞察之冠"的增益效果，这个增益让你获得25法力(或能量)回复/5秒，每秒回复你最大法力(能量)值的0.5%，并提供10%冷却缩减。(持续时间:120秒)s', img: ''}
-		,{content: '峡谷最强生物没有之一，击杀获得男爵buff加成，攻击力个法术强度加强并提升线上小兵的生存能力和攻击力', img: './images/201406181137403014.png'}
-		,{content: '因为长得像石头所以被人称呼为“石头怪”可以分裂一个变两个，两个变四个，击杀有丰厚的金钱奖励和防御加成', img: './images/201406181137448206.png'}
-		,{content: '四只幽灵常常会骚扰过路的召唤师，攻击带有吸血效果。击杀获得吸血效果', img: './images/201406181137261311.png'}
-		];
-		var slide_a = Array.prototype.slice.call(document.querySelectorAll('.slide a'));
-		var select_dd = Array.prototype.slice.call(document.querySelectorAll('#select dd'));
-		var concats = slide_a.concat(select_dd);
-		Array.prototype.forEach.call(concats, function (item, index) {
-			item.addEventListener('click', function () {
-				if(this.textContent.indexOf('野区') > -1) {
-					var select = document.getElementById('select');
-					if(select.style.display === 'none') {
-						select.style.display = 'block';
-						document.querySelector('.font-down').style.backgroundImage = 'url(./images/less.svg)';
-					} else {
-						select.style.display = 'none';
-						document.querySelector('.font-down').style.backgroundImage = 'url(./images/more_unfold.svg)';
-					}
-					return;
-				}
-				document.querySelector('.title').innerHTML = this.textContent;
-				var obj = document.querySelector('.content');
-				obj.innerHTML = ''; //清空数据
-				if(data[index].img) {
-					var img = document.createElement('IMG');
-					var p   = document.createElement('P');
-					p.textContent = data[index].content;
-					img.src = data[index].img;
-					img.style.height = img.style.width = '300px';
-					img.style.float = 'left';
-					obj.appendChild(img);
-					obj.appendChild(p);
-				} else {
-					obj.innerHTML = data[index].content;
-				}
-				
-				document.querySelector('.layer').style.display = 'block';
-			})
+<script>
+	// 样式动画
+	window.onload = function () {
+		document.getElementById('search').addEventListener('focus', function () {
+			document.querySelector('.input-search').style.border = "2px #c4a361 solid";
 		});
-		document.querySelector('.cancel').addEventListener('click', function () {
-			document.querySelector('.layer').style.display = 'none';
+		document.getElementById('search').addEventListener('blur', function () {
+			document.querySelector('.input-search').style.border = "2px #785a28 solid";
+		});
+		var items    = document.querySelectorAll('.items-filter>ul>li');
+		var selectes = Array.prototype.slice.call(document.querySelectorAll('.icon-select'));
+		Array.prototype.forEach.call(items, function (item, index) {
+			item.addEventListener('click', function () {
+				selectes.forEach(function (s, i) {
+					if(i === index) {
+						s.style.display = !s.style.display || s.style.display === 'none' ? 'initial': 'none';
+					} else {
+						s.style.display = 'none';
+					}
+				});
+			});
 		});
 	}
 </script>
