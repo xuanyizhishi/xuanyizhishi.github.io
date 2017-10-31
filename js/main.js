@@ -12,15 +12,15 @@
     });
 
     var swiper2 = new Swiper('.hreo-turn', {
-	  onInit: function(swiper){ 
-	    swiperAnimateCache(swiper); //隐藏动画元素 
-	    swiperAnimate(swiper); //初始化完成开始动画
-	  }, 
-	  onSlideChangeEnd: function(swiper){ 
-	    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-	  },
-	  pagination : '.swiper-pagination',
-	  paginationClickable :true
+        onInit: function(swiper){ 
+        swiperAnimateCache(swiper); //隐藏动画元素 
+            swiperAnimate(swiper); //初始化完成开始动画
+        }, 
+        onSlideChangeEnd: function(swiper){ 
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        },
+        pagination : '.swiper-pagination',
+        paginationClickable :true
 	});
 
 	var swiper3 = new Swiper('.play-turn', {

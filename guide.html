@@ -163,9 +163,9 @@
 		var concats = slide_a.concat(select_dd);
 		Array.prototype.forEach.call(concats, function (item, index) {
 			item.addEventListener('click', function () {
-				if(this.textContent.indexOf('野区') > -1) {
+				if (this.textContent.indexOf('野区') > -1) {
 					var select = document.getElementById('select');
-					if(select.style.display === 'none') {
+					if (select.style.display === 'none') {
 						select.style.display = 'block';
 						document.querySelector('.font-down').style.backgroundImage = 'url(./fonts/less.svg)';
 					} else {
@@ -177,7 +177,7 @@
 				document.querySelector('.title').innerHTML = this.textContent;
 				var obj = document.querySelector('.content');
 				obj.innerHTML = ''; //清空数据
-				if(data[index].img) {
+				if (data[index].img) {
 					var img = document.createElement('IMG');
 					var p   = document.createElement('P');
 					p.textContent = data[index].content;

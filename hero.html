@@ -5,9 +5,28 @@
 	<meta charset="utf-8">
 	<title>英雄介绍</title>
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<script src="./js/vue.min.js"></script>
 	<style type="text/css">
+		/*默认滚动条样式只作用于webkit内核*/
+		::-webkit-scrollbar {
+		    width: 8px;
+		    height: 8px;
+		}
+		::-webkit-scrollbar-track {
+		    border: 1px #d3d3d3 solid;
+		    box-shadow: 0px 0px 3px #dfdfdf inset;
+		    border-radius: 10px;
+		    background: #eee;
+		}
+		::-webkit-scrollbar-thumb {
+		    border: 1px #808080 solid;
+		    border-radius: 10px;
+		    background: #a98549;
+		}
+		/* end */
 		body {
-			background-color: #08111a;
+			background-image: url(./images/bg-heros.png);
+			background-size: cover;
 		}
 		.input-search {
 			width: 208px;
@@ -81,15 +100,31 @@
 			left: 22px;
 			z-index: 99;
 			display: none;
-			background-size: 16px 16px;
+			background-size: 20px 20px;
 		    background-repeat: no-repeat;
 		    background-image: url(./fonts/selected.svg);
 		}
 		.flex-content {
 			display: flex;
 		    flex-direction: row;
-		    justify-content:space-between;
+		    flex-wrap: wrap;
+		    justify-content: flex-start;
 		    align-items: flex-start;
+		}
+		.flex-item {
+			display: flex;
+			flex-direction: column-reverse;
+			width: 88px;
+			height: 88px;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.hero-box {
+			font-size: 10px;
+			color: #d8d0bd;
+			cursor: pointer;
+			text-align: center;
+			border: 1px #785a28 solid;
 		}
 	</style>
 </head>
@@ -127,7 +162,8 @@
 	<!-- end 导航-->
 
 	<section class="flex-slide">
-		<div class="slide-box">
+		<!-- 此处并没有让他fixed -->
+		<div class="slide-box" style="position: absolute;">
 			<!-- 搜索框 -->
 			<div class="input-search">
 				<i class="icon-search"></i>
@@ -147,14 +183,31 @@
 			</div>
 		</div>
 		<!-- 英雄列表 -->
-		<div class="flex-content">
-			
+		<div class="content-box" id="heroContainer" style="overflow-y: auto;height: 500px;">
+			<div class="flex-content">
+				<div class="flex-item hero-box" v-for="hero in heros" :style="{backgroundImage: 'url(' + hero.avatar + ')'}" >
+					<span>{{ hero.name }}</span>
+				</div>
+			</div>
 		</div>
+		<!-- 渲染数据 -->
+		<script src="./js/LOLHeros.js"></script>
+		<script>
+			// vue实例
+			var vm = new Vue({
+				el: '#heroContainer',
+				data: {
+					heros: LOLHeros
+				}
+			});
+		</script>
 	</section>
 
 <script>
-	// 样式动画
 	window.onload = function () {
+		// 按页面显示的顺序来
+		var tags = ['Assassin', 'Fighter', 'Mage', 'Marksman', 'Support', 'Tank']
+
 		document.getElementById('search').addEventListener('focus', function () {
 			document.querySelector('.input-search').style.border = "2px #c4a361 solid";
 		});
@@ -166,10 +219,22 @@
 		Array.prototype.forEach.call(items, function (item, index) {
 			item.addEventListener('click', function () {
 				selectes.forEach(function (s, i) {
-					if(i === index) {
-						s.style.display = !s.style.display || s.style.display === 'none' ? 'initial': 'none';
+					if (i === index) {
+						// 选中了第index
+						if (!s.style.display || s.style.display === 'none') {
+							s.style.display = 'initial'; // 勾选状态
+							// 过滤英雄属性
+							vm.heros = LOLHeros.filter(function (i) {
+								return i.tags.some(function (tag) {
+									return tag === tags[index];
+								});
+							});
+						} else {
+							// 全选状态
+							s.style.display = 'none'; // 非勾选状态
+						}
 					} else {
-						s.style.display = 'none';
+						s.style.display = 'none'; // 非勾选状态
 					}
 				});
 			});

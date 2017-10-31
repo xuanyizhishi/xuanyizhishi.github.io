@@ -507,7 +507,7 @@ video::-webkit-media-controls-enclosure {
 .content-box {
     width:700px;
     flex-grow: 1;
-    padding: 20px 100px 20px 400px;
+    padding: 20px 100px 20px 300px;
 }
 .slide-box {
     position:fixed;

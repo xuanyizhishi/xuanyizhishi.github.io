@@ -58,7 +58,7 @@
 	</footer>
 
 <script>
-	window.onload = function () {
+	(function () {
 		// 绑定所有按钮点击事件
 		var navLogin = document.querySelectorAll('.item');
 		var navs     = Array.prototype.slice.call(navLogin);
@@ -80,7 +80,7 @@
 		document.querySelector('.cancel').addEventListener('click', function () {
 			document.querySelector('.layer').style.display = 'none';
 		});
-	}
+	})()
 </script>
 </body>
 </html>
