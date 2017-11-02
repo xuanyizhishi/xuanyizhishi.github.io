@@ -133,7 +133,12 @@
 			transition: all 1s;
 		}
 		.hero-box:hover {
-			/**/
+			border: 1px #ff9f00 solid;
+			transform: scale(1.5);
+		    -webkit-transform: scale(1.5);
+		    -moz-transform: scale(1.5);
+		    -o-transform: scale(1.5);
+		    -ms-transform: scale(1.5);
 		}
 		.flex-lt {
 			position: static;
@@ -215,6 +220,9 @@
 					<div class="flex-item hero-box" v-for="hero in heros" :key="hero.key" :style="{backgroundImage: 'url(' + hero.avatar + ')'}" >
 						<span>{{ hero.name }}</span>
 					</div>
+					<!-- 弹出层 -->
+					
+					<!-- end 弹出层 -->
 				</transition-group>
 			</div>
 		</div>
