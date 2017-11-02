@@ -109,7 +109,7 @@
 		    background-repeat: no-repeat;
 		    background-image: url(./fonts/selected.svg);
 		}
-		.flex-content {
+		.flex-content>div {
 			display: flex;
 		    flex-direction: row;
 		    flex-wrap: wrap;
@@ -130,9 +130,13 @@
 			cursor: pointer;
 			text-align: center;
 			border: 1px #785a28 solid;
+			transition: all 1s;
+		}
+		.hero-box:hover {
+			/**/
 		}
 		.flex-lt {
-			position: unset;
+			position: static;
 		}
 		.flex-gt {
 			height: 500px;
@@ -141,6 +145,12 @@
 			-ms-overflow-y: auto;
 			overflow-y: auto;
 		}
+		/* 过渡动画 */
+		.list-hero-enter, .list-hero-leave-to {
+		    opacity: 0;
+		    transform: translateY(30px);
+		}
+		/* end */
 	</style>
 </head>
 <body>
@@ -200,9 +210,12 @@
 		<!-- 英雄列表 -->
 		<div class="content-box flex-gt" id="heroContainer" style="display: none;">
 			<div class="flex-content">
-				<div class="flex-item hero-box" v-for="hero in heros" :style="{backgroundImage: 'url(' + hero.avatar + ')'}" >
-					<span>{{ hero.name }}</span>
-				</div>
+				<transition-group name="list-hero" tag="div">
+					<!-- <transition-group>的每个子节点必须有独立的key，动画才能正常工作 -->
+					<div class="flex-item hero-box" v-for="hero in heros" :key="hero.key" :style="{backgroundImage: 'url(' + hero.avatar + ')'}" >
+						<span>{{ hero.name }}</span>
+					</div>
+				</transition-group>
 			</div>
 		</div>
 		<!-- 渲染数据 -->
@@ -274,11 +287,20 @@
 		});
 		// 绑定搜索框的
 		search.addEventListener('input', function () {
-			// 显示可删除
-			if (this.value)
-				close.style.display = '';
-			else
+			var filter = this.value;
+			if (filter) {
+				close.style.display = ''; // 显示可删除
+				// 根据搜索关键词过滤英雄
+				setData(LOLHeros.filter(function (i) {
+					return [i.id, i.name, i.title].some(function (s) { 
+						return new RegExp(filter, 'i').test(s);
+					})
+				}));
+			}
+			else {
 				close.style.display = 'none';
+				setData(LOLHeros.slice()); // 显示全部英雄
+			}
 		});
 		// 触发事件 兼容ie
 		var fireEvent = function(element,event){
@@ -300,7 +322,6 @@
 			fireEvent(search, 'input');
 		});
 	}
-
 </script>
 </body>
 </html>
