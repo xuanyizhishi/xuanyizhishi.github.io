@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
 	<meta charset="utf-8">
 	<title>英雄介绍</title>
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
@@ -24,6 +25,11 @@
 		    background: #a98549;
 		}
 		/* end */
+		/* ie下消除input中的 × */
+		::-ms-clear, ::-ms-reveal{
+			display: none;
+		}
+		/* end */
 		body {
 			background-image: url(./images/bg-heros.png);
 			background-size: cover;
@@ -43,7 +49,7 @@
 		}
 		.input-search input {
 			float: left;
-			width: 152px;
+			width: 150px;
 		    height: 20px;
 		    line-height: 20px;
 		    margin-top: 8px;
@@ -99,7 +105,6 @@
 			height: 20px;
 			left: 22px;
 			z-index: 99;
-			display: none;
 			background-size: 20px 20px;
 		    background-repeat: no-repeat;
 		    background-image: url(./fonts/selected.svg);
@@ -125,6 +130,16 @@
 			cursor: pointer;
 			text-align: center;
 			border: 1px #785a28 solid;
+		}
+		.flex-lt {
+			position: unset;
+		}
+		.flex-gt {
+			height: 500px;
+			padding: 20px !important;
+			/* ie下显示滚动条 */
+			-ms-overflow-y: auto;
+			overflow-y: auto;
 		}
 	</style>
 </head>
@@ -163,27 +178,27 @@
 
 	<section class="flex-slide">
 		<!-- 此处并没有让他fixed -->
-		<div class="slide-box" style="position: absolute;">
+		<div class="slide-box flex-lt">
 			<!-- 搜索框 -->
 			<div class="input-search">
 				<i class="icon-search"></i>
-				<input type="text" placeholder="搜索" id="search" maxlength="8">
-				<i class="icon-close"></i>
+				<i class="icon-close" style="display: none;"></i>
+				<input type="text" placeholder="搜索" id="search" maxlength="8" >
 			</div>
 			<!-- 过滤选项 -->
 			<div class="items-filter">
 				<ul>
-					<li><span>刺客</span><i class="icon-check"></i><i class="icon-select"></i></li>
-					<li><span>战士</span><i class="icon-check"></i><i class="icon-select"></i></li>
-					<li><span>法师</span><i class="icon-check"></i><i class="icon-select"></i></li>
-					<li><span>射手</span><i class="icon-check"></i><i class="icon-select"></i></li>
-					<li><span>辅助</span><i class="icon-check"></i><i class="icon-select"></i></li>
-					<li><span>坦克</span><i class="icon-check"></i><i class="icon-select"></i></li>
+					<li><i class="icon-check"></i><i class="icon-select" style="display: none;"></i><span>刺客</span></li>
+					<li><i class="icon-check"></i><i class="icon-select" style="display: none;"></i><span>战士</span></li>
+					<li><i class="icon-check"></i><i class="icon-select" style="display: none;"></i><span>法师</span></li>
+					<li><i class="icon-check"></i><i class="icon-select" style="display: none;"></i><span>射手</span></li>
+					<li><i class="icon-check"></i><i class="icon-select" style="display: none;"></i><span>辅助</span></li>
+					<li><i class="icon-check"></i><i class="icon-select" style="display: none;"></i><span>坦克</span></li>
 				</ul>
 			</div>
 		</div>
 		<!-- 英雄列表 -->
-		<div class="content-box" id="heroContainer" style="overflow-y: auto;height: 500px;">
+		<div class="content-box flex-gt" id="heroContainer" style="display: none;">
 			<div class="flex-content">
 				<div class="flex-item hero-box" v-for="hero in heros" :style="{backgroundImage: 'url(' + hero.avatar + ')'}" >
 					<span>{{ hero.name }}</span>
@@ -193,45 +208,63 @@
 		<!-- 渲染数据 -->
 		<script src="./js/LOLHeros.js"></script>
 		<script>
-			// vue实例
-			var vm = new Vue({
-				el: '#heroContainer',
-				data: {
-					heros: LOLHeros
-				}
-			});
+			// 这里采用IIFE和闭包的形式是为了让外部(也就是全局作用域)无法获取vue实例
+			// 并且由于形成闭包，内部作用域一直依然存在，所以它也不会被销毁
+			(function (global) {
+				// vue实例
+				var vm = new Vue({
+					el: '#heroContainer',
+					data: {
+						heros: global.LOLHeros
+					},
+					mounted: function () {
+						this.$el.style.display = 'block';
+					}
+				});
+
+				global.setData = function (data) {
+					vm.heros = data;
+				};
+
+			})(window)
+			
+
 		</script>
 	</section>
 
 <script>
 	window.onload = function () {
 		// 按页面显示的顺序来
-		var tags = ['Assassin', 'Fighter', 'Mage', 'Marksman', 'Support', 'Tank']
-
-		document.getElementById('search').addEventListener('focus', function () {
+		var tags   = ['Assassin', 'Fighter', 'Mage', 'Marksman', 'Support', 'Tank'];
+		var search = document.getElementById('search');
+		var close  = document.querySelector('.input-search .icon-close');
+		search.addEventListener('focus', function () {
 			document.querySelector('.input-search').style.border = "2px #c4a361 solid";
 		});
-		document.getElementById('search').addEventListener('blur', function () {
+		search.addEventListener('blur', function () {
 			document.querySelector('.input-search').style.border = "2px #785a28 solid";
 		});
 		var items    = document.querySelectorAll('.items-filter>ul>li');
 		var selectes = Array.prototype.slice.call(document.querySelectorAll('.icon-select'));
+		// 绑定所有‘复选框’的点击事件
 		Array.prototype.forEach.call(items, function (item, index) {
 			item.addEventListener('click', function () {
 				selectes.forEach(function (s, i) {
 					if (i === index) {
 						// 选中了第index
-						if (!s.style.display || s.style.display === 'none') {
-							s.style.display = 'initial'; // 勾选状态
+						if (s.style.display === 'none') {
+							// 必须将display: 'none'写在内联里下面的语句才能生效
+							s.style.display = ''; // 勾选状态
 							// 过滤英雄属性
-							vm.heros = LOLHeros.filter(function (i) {
+							setData(LOLHeros.filter(function (i) {
 								return i.tags.some(function (tag) {
 									return tag === tags[index];
 								});
-							});
+							}));
 						} else {
 							// 全选状态
 							s.style.display = 'none'; // 非勾选状态
+							setData(LOLHeros.slice()); // 显示全部英雄
 						}
 					} else {
 						s.style.display = 'none'; // 非勾选状态
@@ -239,7 +272,35 @@
 				});
 			});
 		});
+		// 绑定搜索框的
+		search.addEventListener('input', function () {
+			// 显示可删除
+			if (this.value)
+				close.style.display = '';
+			else
+				close.style.display = 'none';
+		});
+		// 触发事件 兼容ie
+		var fireEvent = function(element,event){
+	        if (document.createEventObject){
+	            // IE浏览器支持fireEvent方法
+	            var evt = document.createEventObject();
+	            return element.fireEvent('on' + event, evt);
+	        }
+	        else{
+	            // 其他标准浏览器使用dispatchEvent方法
+	            var evt = document.createEvent('HTMLEvents');
+	            evt.initEvent(event, true, true);
+	            return !element.dispatchEvent(evt);
+	        }
+	    };
+		// 绑定删除事件
+		close.addEventListener('click', function () {
+			search.value = '';
+			fireEvent(search, 'input');
+		});
 	}
+
 </script>
 </body>
 </html>

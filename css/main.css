@@ -537,8 +537,8 @@ footer ul li a, footer ul li {
 footer ul li a:hover{
     opacity:0.5
 }
-/* 响应式设计 */
-@media only screen and (max-width: 673px) {
+/* 响应式设计 原:673 */
+@media only screen and (max-width: 778px) {
     .hero-image {
         position: absolute;
         height: 160px;
@@ -573,5 +573,13 @@ footer ul li a:hover{
     }
     .wrapper-login {
         width: 100%
+    }
+    .input-search {
+        position: absolute;
+        top: 32px;
+        width: calc(100% - 4px) !important
+    }
+    .flex-lt, .flex-gt {
+        margin-top: 70px;
     }
 }
