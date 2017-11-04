@@ -12,10 +12,6 @@ const base_skin   = 'http://ossweb-img.qq.com/images/lol/web201310/skin/'
 const base_detail = 'http://lol.qq.com/biz/hero/'
 
 const fetchDetail = (url, cb) => {
-	const PrefixInteger = (num, length) => {
-		return (Array(length).join('0') + num).slice(-length);
-	}
-
 	superagent
 		.get(url + '.js')
 		.set('Content-Type', 'application/x-javascript')
@@ -30,8 +26,8 @@ const fetchDetail = (url, cb) => {
 				skins: Array.from({length: detail.skins.length}, (v,k) => {
 					return {
 						name: detail.skins[k].name,
-						big: base_skin + 'big'+ detail.id + PrefixInteger(k + 1, 3) + '.jpg',
-						small: base_skin + 'small'+ detail.id + PrefixInteger(k + 1, 3) + '.jpg'
+						big: base_skin + 'big' + detail.skins[k].id + '.jpg',
+						small: base_skin + 'small' + detail.skins[k].id + '.jpg'
 					}
 				}),
 				// 背景故事
