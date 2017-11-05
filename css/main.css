@@ -9,7 +9,7 @@ body,article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,
     display: block;
     margin: 0
 }
-button {
+button, input, textarea {
     outline: none
 }
 ul {
@@ -398,7 +398,7 @@ video::-webkit-media-controls-enclosure {
     padding: 30px 0;
     width: 330px
 }
-.replace-view .input {
+.replace-view .input, .message-editor input {
     box-sizing: border-box;
     padding: 3px 7px;
     border: 1px solid #d7d7d7;
@@ -408,7 +408,7 @@ video::-webkit-media-controls-enclosure {
     font-size: 14px;
     margin-bottom: 30px
 }
-.replace-view button {
+.replace-view button, .message-editor button {
     box-sizing: border-box;
     border: 0;
     padding: 0 15px;
@@ -421,7 +421,7 @@ video::-webkit-media-controls-enclosure {
     cursor: pointer;
     background-color: #3f9f5f
 }
-.replace-view button:hover, .btn-group button:hover {
+.replace-view button:hover, .btn-group button:hover, .message-editor button:hover {
     background-color: #0d7d32
 }
 .active-item, .item:hover {
