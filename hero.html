@@ -162,7 +162,7 @@
 		}
 		/* end */
 		#layer {
-			position: absolute;
+			position: fixed;
 			z-index: 99;
 			box-shadow: -10px 10px 5px #010b14;
 		    border: 1px #082736 solid;
@@ -178,6 +178,19 @@
 			width: 1000px;
 			height: 500px;
 			/*transform: rotateY(360deg);*/
+		}
+		.multiple-text {
+			position: relative; 
+			line-height: 20px; 
+			max-height: 500px;
+			overflow: hidden;
+		}
+		.multiple-text::after {
+			content: '...';
+			position: absolute; 
+			bottom: 0; 
+			right: 0; 
+			padding-left: 40px;
 		}
 		/* 轮播样式 */
 		.swiper-container {
@@ -203,6 +216,27 @@
 	        width: 8%;
 	        height: 100%;
 	    }
+	    /* ipad */
+	    @media screen and (max-height: 1024px) {
+		    .flex-gt {
+		    	height: 100%;
+		    }
+		    #gallery-thumbs .swiper-slide {
+		    	width: 10%;
+		    }
+		}
+		/* phone */
+		@media screen and (max-height: 667px) {
+			.flex-gt {
+		    	height: 435px;
+		    }
+			.multiple-text {
+				max-height: 300px;
+			}
+			#gallery-thumbs .swiper-slide {
+		    	width: 20%;
+		    }
+		}
 	</style>
 	<script>
 		// 触发事件 兼容ie
@@ -263,9 +297,10 @@
 			<i class="icon-close" @click="close"></i>
 		</div>
 		<!-- 背景故事 -->
-		<div style="position: absolute;top: 30px;width: 40%;z-index: 100;text-indent: 100px;" v-show="!isLoading">
+		<div style="position: absolute;top: 30px;z-index: 100;margin:0 100px;" v-show="!isLoading">
 			<h2>皮肤预览</h2>
 			<p style="color: #FFC107;">{{ skinName && skinName.name === 'default' ? '默认' : skinName && skinName.name }}</p>
+			<div v-html="hero.blurb" class="multiple-text"></div>
 		</div>
 		<!-- Swiper -->
 	    <div class="swiper-container" id="gallery-top">
@@ -345,16 +380,16 @@
 					},
 					watch: {
 						show: function (val) {
+							var layerDom = document.getElementById('layer');
 							if (val) {
-								var layerDom = document.getElementById('layer');
-								var iTop     = (global.screen.availHeight  - 500) / 2; 
-								var iLeft    = (global.screen.availWidth  - 1000) / 2;
+								var iTop     = document.documentElement.clientHeight -2;
+								var iLeft    = document.documentElement.clientWidth -2;
 								var self     = this;
-								layerDom.style.top     = iTop + 'px';
-								layerDom.style.left    = iLeft + 'px';
 
 								setTimeout(function (){
-									layerDom.className = 'show-dialog'
+									layerDom.style.height   = iTop + 'px';
+									layerDom.style.width    = iLeft + 'px';
+									// layerDom.className = 'show-dialog'
 								}, 10);
 								// 此处应该在过渡效果3s消失后判断执行
 								setTimeout(function () {
