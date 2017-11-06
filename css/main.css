@@ -227,8 +227,6 @@ video::-webkit-media-controls-enclosure {
 .section-home {
 	position: relative;
 	margin-top: 0;
-    min-height: 420px;
-    height: 100vh;
     background-position: top;
     background-size: cover
 }
@@ -581,5 +579,11 @@ footer ul li a:hover{
     }
     .flex-lt, .flex-gt {
         margin-top: 70px;
+    }
+    .slide {
+        position: absolute;
+        width: 100%;
+        background-color: transparent !important;
+        text-align: center;
     }
 }

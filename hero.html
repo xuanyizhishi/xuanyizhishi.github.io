@@ -168,6 +168,7 @@
 		    border: 1px #082736 solid;
 		    border-radius: 5px;
 			transition: all 3s;
+			background-color: #082736;
 		}
 		.no-width-height {
 			width: 0;
@@ -176,7 +177,7 @@
 		.show-dialog {
 			width: 1000px;
 			height: 500px;
-			transform: rotateY(360deg);
+			/*transform: rotateY(360deg);*/
 		}
 		/* 轮播样式 */
 		.swiper-container {
@@ -197,7 +198,6 @@
 	        height: 20%;
 	        box-sizing: border-box;
 	        padding: 10px 0;
-	        background-color: #082736;
 	    }
 	    #gallery-thumbs .swiper-slide {
 	        width: 8%;
@@ -235,6 +235,7 @@
 	        	<li><a href="guide.html">新手指引</a></li>
 	        	<li><a href="hero.html">英雄介绍</a></li>
 	        	<li><a href="">视频专区</a></li>
+	        	<li><a href="message.html">留言</a></li>
 	        </ul>
 	        <div class="nav-right">
 	        	<a href="login.html" class="nav-download nav-transition">登陆/注册</a>
@@ -247,6 +248,7 @@
 	        		<a href="guide.html">新手指引</a>
 	        		<a href="hero.html">英雄介绍</a>
 	        		<a href="">视频专区</a>
+	        		<a href="message.html">留言</a>
 	        	</div>
 	        </div>
 	        <!-- end 移动端导航 -->
@@ -261,7 +263,7 @@
 			<i class="icon-close" @click="close"></i>
 		</div>
 		<!-- 背景故事 -->
-		<div style="position: absolute;top: 30px;width: 40%;z-index: 100;text-indent: 100px;">
+		<div style="position: absolute;top: 30px;width: 40%;z-index: 100;text-indent: 100px;" v-show="!isLoading">
 			<h2>皮肤预览</h2>
 			<p style="color: #FFC107;">{{ skinName && skinName.name === 'default' ? '默认' : skinName && skinName.name }}</p>
 		</div>
@@ -338,7 +340,8 @@
 						firstAlert: true,
 						galleryTop: {
 							activeIndex: 0
-						}
+						},
+						isLoading: true
 					},
 					watch: {
 						show: function (val) {
@@ -355,6 +358,7 @@
 								}, 10);
 								// 此处应该在过渡效果3s消失后判断执行
 								setTimeout(function () {
+									self.isLoading = false;
 									if (self.firstAlert) {
 										fireEvent(global, 'resize'); //重新调整一下浏览器窗口
 										self.firstAlert = false;
