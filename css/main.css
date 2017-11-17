@@ -67,6 +67,7 @@ section {
 .opt {
 	float: left;
     display: flex;
+    display: -webkit-flex;
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0;
@@ -492,6 +493,7 @@ video::-webkit-media-controls-enclosure {
 /* begin game.html */
 .flex-slide {
     display: flex;
+    display: -webkit-flex;
     flex-direction: row;
     justify-content:space-between;
     align-items: flex-start;
