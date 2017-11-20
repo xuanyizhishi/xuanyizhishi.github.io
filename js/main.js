@@ -24,4 +24,18 @@
             setTimeout(judge, 100);
         });
     })
+
+    !function () {
+        [].forEach.call(document.querySelectorAll('.watch'), function (item) {
+            item.addEventListener("click", function () {
+                document.querySelector('.vedio-alert').style.display = "block";
+                document.querySelector('.section-home-video').style.display = "block";
+            });
+        });
+        document.querySelector('.cls').addEventListener("click", function () {
+            document.querySelector('.vedio-alert').style.display = "none";
+            document.querySelector('.section-home-video').style.display = "none";
+            document.querySelector('.video-play').load();
+        });
+    }()
 }()

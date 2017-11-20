@@ -223,7 +223,7 @@ video::-webkit-media-controls-enclosure {
 	position: absolute;
     display: block
 }
-#cls {
+.cls {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -233,16 +233,10 @@ video::-webkit-media-controls-enclosure {
     border: none;
     cursor: pointer
 }
-#cls:hover {
-    background-color: #fff;
-    color: black;
-    border-radius: 25px
-
-}
-#cls:active {
+.cls:active {
     padding: 0
 }
-#watch {
+.btn-watch {
     padding: 20px 110px;
     border-radius: 30px;
     border: 1px solid #ffffff;
@@ -256,7 +250,7 @@ video::-webkit-media-controls-enclosure {
     cursor: pointer;
     background-color: #dbbb7a
 }
-#watch:hover {
+.btn-watch:hover {
     background-color: rgba(0,0,0,0.5)
 }
 /* end video */

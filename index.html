@@ -54,7 +54,7 @@
 			<!-- 固定层 -->
 	        <div class="section-home-text">
 	        	<h2 class="typing" style="font-family: cursive;">峡谷之战</h2>
-	        	<button id="watch">watch it</button>
+	        	<button class="watch btn-watch">watch it</button>
 	        </div>
 	        <!-- end 固定层 -->
 			<div class="swiper-wrapper">
@@ -72,8 +72,8 @@
         <div class="section-home-video">
 			<div class="box-mask"></div>
 			<div class="vedio-alert model">
-				<button id="cls">关闭</button>
-				<video loop="loop" controlsList="nodownload" id="video" controls poster="./images/bg-video.png" x-webkit-airplay="true" webkit-playsinline="true">
+				<button class="cls">关闭</button>
+				<video loop="loop" controlsList="nodownload" class="video-play" controls poster="./images/bg-video.png" x-webkit-airplay="true" webkit-playsinline="true">
 	            	<!-- 考虑到不同浏览器支持的视频格式不同 -->
 	                <!-- <source src="./images/source/big-v1.webm" type="video/webm"> -->
 	                <source src="http://omsiv11v3.bkt.clouddn.com/Youtube-League+of+Legends+Cinematic_+A+New+Dawn_1080P.mp4" type="video/mp4">
@@ -296,19 +296,6 @@
 	            shadowScale: 0.94
 	        }
 	    });
-
-	    !function () {
-	    	document.getElementById('watch').addEventListener("click", function () {
-				document.querySelector('.vedio-alert').style.display = "block";
-				document.querySelector('.section-home-video').style.display = "block";
-		    });
-
-	    	document.getElementById('cls').addEventListener("click", function () {
-				document.querySelector('.vedio-alert').style.display = "none";
-				document.querySelector('.section-home-video').style.display = "none";
-				document.getElementById('video').load();
-	    	});
-	    }()
 	}()
 </script>
 </body>
