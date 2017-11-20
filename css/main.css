@@ -229,7 +229,7 @@ video::-webkit-media-controls-enclosure {
     top: 20px;
     color: #fff;
     font-size: 30px;
-    background-color: inherit;
+    background-color: transparent;
     border: none;
     cursor: pointer
 }
