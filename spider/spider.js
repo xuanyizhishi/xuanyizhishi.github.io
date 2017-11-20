@@ -31,7 +31,7 @@ const fetchDetail = (url, cb) => {
 					}
 				}),
 				// 背景故事
-				lore: detail.lore
+				blurb: detail.blurb
 			})
 		})
 }
