@@ -81,8 +81,14 @@
 	        <ul>
 	        	<li><a href="game.html">游戏介绍</a></li>
 	        	<li><a href="guide.html">新手指引</a></li>
-	        	<li><a href="hero.html">英雄介绍</a></li>
-	        	<li><a href="">视频专区</a></li>
+	        	<li class="drop-down">
+	        		<a href="javascript:void(0);">介绍<i class="icon-down"></i></a>
+	        		<dl class="down-detail" style="display: none;">
+	        			<dd><a href="game.html">游戏介绍</a></dd>
+	        			<dd><a href="map.html">地图介绍</a></dd>
+	        		</dl>
+	        	</li>
+	        	<li><a href="video.html">视频专区</a></li>
 	        	<li><a href="message.html">留言</a></li>
 	        </ul>
 	        <div class="nav-right">
@@ -224,5 +230,6 @@
 		});
 	})()
 </script>
+<script src="./js/main.js"></script>
 </body>
 </html>

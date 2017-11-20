@@ -111,7 +111,7 @@ section {
 	-webkit-transition: border-radius 1s;	/* Safari 和 Chrome */
 	-o-transition: border-radius 1s	/* Opera */
 }
-.nav-logo{
+.nav-logo {
     display: inline-block;
 	width: 245px;
 	height: 62px;
@@ -119,21 +119,58 @@ section {
     background-position: center center;
 	background-image: url(../images/logo.png)
 }
-.navbars ul li {
-	display: inline-block;
-	height: 100%
+.navbars li {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 62px
 }
-.navbars ul li:hover {
+.navbars li a:hover {
 	opacity: 0.5
 }
-.navbars ul li a {
+.navbars li a {
 	position: relative;
 	display: block;
 	text-align: center;
 	color: rgba(255,255,255,.85);
 	font-size: 17px;
     min-width: 99px;
-    padding-top: 15px
+    padding: 0
+}
+.down-detail {
+    position: absolute;
+    left: 0;
+    top: 62px;
+    min-width: 100%;
+    padding: 5px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,.12);
+    border: 1px solid #696867;
+    background-color: #3d4860;
+    z-index: 100;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+.navbars dl dd {
+    margin: 0;
+    padding: 0;
+    line-height: 36px;
+}
+.drop-down dd a {
+    display: block;
+}
+.icon-down {
+    background-image: url(../fonts/down.svg);
+}
+.icon-up {
+    background-image: url(../fonts/up.svg);
+}
+.icon-down, .icon-up {
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
 }
 /* video */
 .section-home-video, .layer {

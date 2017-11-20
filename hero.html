@@ -347,15 +347,15 @@
 						show: function (val) {
 							if (val) {
 								var layerDom = document.getElementById('layer');
-								var iTop     = (global.screen.availHeight  - 500) / 2; 
-								var iLeft    = (global.screen.availWidth  - 1000) / 2;
+								var iTop     = global.screen.availHeight - 10; 
+								var iLeft    = global.screen.availWidth - 10;
 								var self     = this;
-								layerDom.style.top     = iTop + 'px';
-								layerDom.style.left    = iLeft + 'px';
+								layerDom.style.height  = iTop + 'px';
+								layerDom.style.width   = iLeft + 'px';
 
-								setTimeout(function (){
-									layerDom.className = 'show-dialog'
-								}, 10);
+								// setTimeout(function (){
+								// 	layerDom.className = 'show-dialog'
+								// }, 10);
 								// 此处应该在过渡效果3s消失后判断执行
 								setTimeout(function () {
 									self.isLoading = false;

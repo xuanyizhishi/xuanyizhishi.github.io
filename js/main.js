@@ -1,50 +1,27 @@
 !function () {
-	// 首页图片轮播
-    var swiper1 = new Swiper('.swiper-container', {
-        paginationClickable: true,
-        prevButton:'.swiper-button-prev',
-        nextButton:'.swiper-button-next',
-        spaceBetween: 0,
-        loop : true,
-        autoplay : 3000,
-        speed: 2000,
-        autoplayDisableOnInteraction : false
-    });
+    var row = document.querySelector('.drop-down');
+    var rowStyle = document.querySelector('.drop-down i');
+    var downDetail = document.querySelector('.down-detail');
 
-    var swiper2 = new Swiper('.hreo-turn', {
-        onInit: function(swiper){ 
-        swiperAnimateCache(swiper); //隐藏动画元素 
-            swiperAnimate(swiper); //初始化完成开始动画
-        }, 
-        onSlideChangeEnd: function(swiper){ 
-            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-        },
-        pagination : '.swiper-pagination',
-        paginationClickable :true
-	});
-
-	var swiper3 = new Swiper('.play-turn', {
-        pagination: '.swiper-pagination',
-        effect: 'cube',
-        grabCursor: true,
-        cube: {
-            shadow: true,
-            slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.94
+    var isHover = false;
+    var judge = function () {
+        if (!isHover) {
+            rowStyle.className = 'icon-down';
+            downDetail.style.display = 'none';
         }
+    };
+    row.addEventListener('mouseover', function () {
+        rowStyle.className = 'icon-up';
+        downDetail.style.display = 'block';
+        isHover = true;
     });
-
-    !function () {
-    	document.getElementById('watch').addEventListener("click", function () {
-			document.querySelector('.vedio-alert').style.display = "block";
-			document.querySelector('.section-home-video').style.display = "block";
-	    });
-
-    	document.getElementById('cls').addEventListener("click", function () {
-			document.querySelector('.vedio-alert').style.display = "none";
-			document.querySelector('.section-home-video').style.display = "none";
-			document.getElementById('video').load();
-    	});
-    }()
+    downDetail.addEventListener('mouseover', function () {
+        isHover = true;
+    });
+    [row, downDetail].forEach(function (i) {
+        i.addEventListener('mouseout', function () {
+            isHover = false;
+            setTimeout(judge, 100);
+        });
+    })
 }()

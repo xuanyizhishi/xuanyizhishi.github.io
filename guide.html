@@ -39,14 +39,14 @@
 			max-height: 500px;
 		}
 		.font-down {
-			float: right;
-			display: inline-block;
-			position: relative;
-			top: 5px;
-			background-size: 20px 20px;
-			background-image: url(./fonts/more_unfold.svg);
-			width: 20px;
-			height: 20px;
+		    float: right;
+		    display: inline-block;
+		    position: relative;
+		    top: 5px;
+		    background-size: 20px 20px;
+		    background-image: url(./fonts/more_unfold.svg);
+		    width: 20px;
+		    height: 20px;
 		}
 	</style>
 </head>
@@ -96,7 +96,7 @@
 	        <div class="item-slide"><a>防御塔</a></div>
 	        <div class="item-slide"><a>中央水晶枢纽</a></div>
 	        <div class="item-slide">
-	        	<a><span>野区</span><i class="font-down"></i></a>
+	        	<a><span>野区</span><i class="font-down icon-down"></i></a>
 	        	<dl style="display: none;" id="select">
 	        		<dd>大蛤蟆</dd>
 	        		<dd>红buff</dd>
@@ -139,7 +139,7 @@
 		</div>
 	</footer>
 <script>
-	window.onload = function () {
+	!function () {
 
 		var data = [{content: '最新潮最威严的战场当属召唤师峡谷。有三条不同的道路贯穿整个战场，选择敌人最薄弱的一条发动进攻。与你的友军一起进攻敌人的基地，然后摧毁他们的水晶枢纽!<br/>召唤师峡谷位于弗雷尔卓德和一座偏僻的森林之间。召唤师峡谷是瓦罗兰大陆上一个为数不多的，到处充斥着魔法力量的地方，使之成为一个受追求魔法者欢迎的地方。这里的魔法能量是如此的大，改变了这里的生物。这里生存着巨大的青蛙，双头狼，变色龙，有角的兔子和蝴蝶。这个地方也吸引了龙。而纳什男爵也再度出现，这是一条巨大的蛇形生物，很多人认为它已经死了几个世纪，它污染着周围的土地。<br/>在符文大陆期间，许多的符文之战发生在召唤师峡谷。'}
 		,{content: '上单英雄主要以近战的战士，生存能力强或者机动性强的英雄'}
@@ -198,7 +198,7 @@
 		document.querySelector('.cancel').addEventListener('click', function () {
 			document.querySelector('.layer').style.display = 'none';
 		});
-	}
+	}()
 </script>
 </body>
 </html>
