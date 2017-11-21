@@ -142,6 +142,15 @@ section {
     left: 0;
     top: 62px;
     min-width: 100%;
+}
+.up-detail {
+    position: absolute;
+    right: 5px;
+    bottom: 49px;
+    min-width: 140px;
+    text-align: center;
+}
+.up-detail, .down-detail {
     padding: 5px 0;
     box-shadow: 0 2px 4px rgba(0,0,0,.12);
     border: 1px solid #696867;
@@ -568,23 +577,6 @@ footer ul li a:hover{
     opacity:0.5
 }
 /* 响应式设计 */
-@media screen and (max-width: 893px) {
-    .slide-box {
-        display: none;
-    }
-    .content-box {
-        padding: 20px;
-    }
-    .content-box img {
-        display: inline-block;
-        height: auto;
-        max-width: 100%;
-    }
-    .flex-box {
-        margin: 20px !important;
-    }
-}
-
 @media only screen and (max-width: 884px) {
     .hero-image {
         position: absolute;
@@ -638,4 +630,18 @@ footer ul li a:hover{
     .flex-item {
     	width: 90px !important;
     }
+    .flex-box {
+        margin: 20px !important;
+    }
+    .slide-box {
+        display: none;
+    }
+    .content-box {
+        padding: 20px;
+    }
+    .content-box img {
+        display: inline-block;
+        height: auto;
+        max-width: 100%;
+    } 
 }
