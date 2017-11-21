@@ -396,16 +396,14 @@
 						show: function (val) {
 							var layerDom = document.getElementById('layer');
 							if (val) {
-                var layerDom = document.getElementById('layer');
-								var iTop     = global.screen.availHeight - 10; 
-								var iLeft    = global.screen.availWidth - 10;
+                				var height   = document.documentElement.clientHeight;
+								var width    = document.documentElement.clientWidth;
 								var self     = this;
-								layerDom.style.height  = iTop + 'px';
-								layerDom.style.width   = iLeft + 'px';
-
-								// setTimeout(function (){
-								// 	layerDom.className = 'show-dialog'
-								// }, 10);
+								setTimeout(function (){
+									layerDom.style.height   = height + 'px';
+									layerDom.style.width    = width + 'px';
+									// layerDom.className = 'show-dialog'
+								}, 10);
 								// 此处应该在过渡效果3s消失后判断执行
 								setTimeout(function () {
 									self.isLoading = false;
