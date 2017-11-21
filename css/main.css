@@ -541,6 +541,7 @@ video::-webkit-media-controls-enclosure {
 .slide-box {
     position:fixed;
     width:250px;
+    z-index: 2
 }
 .slide-content li:hover {
     background: #4b586d;
@@ -566,7 +567,24 @@ footer ul li a, footer ul li {
 footer ul li a:hover{
     opacity:0.5
 }
-/* 响应式设计 原:673 */
+/* 响应式设计 */
+@media screen and (max-width: 893px) {
+    .slide-box {
+        display: none;
+    }
+    .content-box {
+        padding: 20px;
+    }
+    .content-box img {
+        display: inline-block;
+        height: auto;
+        max-width: 100%;
+    }
+    .flex-box {
+        margin: 20px !important;
+    }
+}
+
 @media only screen and (max-width: 884px) {
     .hero-image {
         position: absolute;
@@ -616,5 +634,8 @@ footer ul li a:hover{
         width: 100%;
         background-color: transparent !important;
         text-align: center;
+    }
+    .flex-item {
+    	width: 90px !important;
     }
 }

@@ -11,12 +11,15 @@
 			padding-top: 62px;
 		}
 		.flex-box {
+			margin: 20px 20px 20px 300px;
+		}
+		.flex-tag {
+			width: 100%;
 			display: flex;
 			display: -webkit-flex;
 			flex-flow: row wrap;
 			justify-content: space-around;
 			align-items: flex-start;
-			margin: 20px;
 		}
 		.flex-item {
 			flex-grow: 1;
@@ -25,7 +28,7 @@
 		    border-radius: 5px;
 			color: #748e9a;
 		}
-		.flex-item:hover {
+		.flex-item:hover, .headline:hover {
 			color: #00a1d6;
 		}
 		.flex-item p {
@@ -83,6 +86,27 @@
 			cursor: pointer;
 			box-sizing: border-box;
 		}
+		.headline {
+			width: 100%;
+		    margin: 15px 0;
+		    font-size: 20px;
+		    cursor: pointer;
+		}
+		.headline::after {
+			content: '更多 >';
+			display: inline-block;
+			float: right;
+		}
+		.icon-video {
+			display: inline-block;
+			width: 25px;
+		    height: 25px;
+		    margin-right: 10px;
+		    vertical-align: middle;
+		    float: left;
+		    background-image: url(./images/icon-video.png);
+		    background-size: 25px 25px;
+		}
 	</style>
 </head>
 <body>
@@ -126,70 +150,166 @@
 	</div>
 	<!-- end 导航-->
 	<div class="flex-container">
+		<div class="slide-box" style="border-right: 1px solid #6f6363;">
+			<ul class="slide-content">
+				<li><a href="#tag1" style="display:block;padding: 5px 15px;">大神集锦</a></li>
+				<li><a href="#tag2" style="display:block;padding: 5px 15px;">搞笑集锦</a></li>
+				<li><a href="#tag3" style="display:block;padding: 5px 15px;">英雄介绍</a></li>
+				<li><a href="#tag4" style="display:block;padding: 5px 15px;">暴走峡谷</a></li>
+				<li><a href="#tag5" style="display:block;padding: 5px 15px;">皮肤预览</a></li>
+			</ul>
+		</div>
 		<div class="flex-box">
-			<div class="flex-item">
-				<div class="pic">
-					<img src="./images/video/65-1G1151K9350-L.jpg">
-					<div class="item-mask"></div>
-					<i class="icon-play watch"></i>
+			<div id="tag1" class="flex-tag">
+				<div class="headline"><i class="icon-video"></i><span>大神集锦</span></div>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1G1091541450-L.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>顶级主播秀：苦练穿墙术！骚男凯隐来去如电</p>
 				</div>
-				<p>4分钟读懂2018季前赛</p>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1F6211J6030-L.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>lol大神直播：马老师卡牌教学 线上单杀乐芙兰</p>
+				</div>
 			</div>
-			<div class="flex-item">
-				<div class="pic">
-					<img src="./images/video/65-1G1141619310-L.png">
-					<div class="item-mask"></div>
-					<i class="icon-play watch"></i>
+			<div id="tag2" class="flex-tag">
+				<div class="headline"><i class="icon-video"></i><span>搞笑集锦</span></div>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1G110144331114.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>主播玩脱了：崩溃的Uzi！满血治疗被咬死！</p>
 				</div>
-				<p>2018季前赛金币补偿说明</p>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1G119151F30-L.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>英熊时刻：杰斯迷之死亡一锤 奥巴马一脸懵逼！</p>
+				</div>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1FZGJ0034X.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>秀你一脸第41期:操作猛如虎 卡特极限1V5</p>
+				</div>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1FQ010453A32.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>LOL坑爹碉堡集锦:我这样的主角 秀起来我自己都怕</p>
+				</div>
 			</div>
-			<div class="flex-item">
-				<div class="pic">
-					<img src="./images/video/65-1G1091541450-L.jpg">
-					<div class="item-mask"></div>
-					<i class="icon-play watch"></i>
+			<div id="tag3" class="flex-tag">
+				<div class="headline"><i class="icon-video"></i><span>英雄介绍</span></div>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1FZQAA30-L.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>教你一招：教你4分钟学会杰斯最强秒人连招</p>
 				</div>
-				<p>顶级主播秀：苦练穿墙术！骚男凯隐来去如电</p>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1G11GJA40-L.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>Miss排位日记453期：S8电刑人马酷秀登场！</p>
+				</div>
 			</div>
-			<div class="flex-item">
-				<div class="pic">
-					<img src="./images/video/65-1G110144331114.jpg">
-					<div class="item-mask"></div>
-					<i class="icon-play watch"></i>
+			<div id="tag4" class="flex-tag">
+				<div class="headline"><i class="icon-video"></i><span>暴走峡谷</span></div>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1G1151K9350-L.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>4分钟读懂2018季前赛</p>
 				</div>
-				<p>主播玩脱了：崩溃的Uzi！满血治疗被咬死！</p>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1G1141619310-L.png">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>2018季前赛金币补偿说明</p>
+				</div>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/65-1G1051HZ50-L.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>2017全球总决赛 决赛 SKT vs SSG_3</p>
+				</div>
 			</div>
-			<div class="flex-item">
-				<div class="pic">
-					<img src="./images/video/65-1F6211J6030-L.jpg">
-					<div class="item-mask"></div>
-					<i class="icon-play watch"></i>
+			<div id="tag5" class="flex-tag">
+				<div class="headline"><i class="icon-video"></i><span>皮肤预览</span></div>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/5329500_1A02bI8.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>LOL牛头酋长阿利斯塔普通皮肤 哞利斯塔</p>
 				</div>
-				<p>lol大神直播：马老师卡牌教学 线上单杀乐芙兰</p>
-			</div>
-			<div class="flex-item">
-				<div class="pic">
-					<img src="./images/video/65-1G1051HZ50-L.jpg">
-					<div class="item-mask"></div>
-					<i class="icon-play watch"></i>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/6146134_1F0433432.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>LOL盲僧李青普通皮肤 防弹武僧</p>
 				</div>
-				<p>2017全球总决赛 决赛 SKT vs SSG_3</p>
-			</div>
-			<div class="flex-item">
-				<div class="pic">
-					<img src="./images/video/65-1FZQAA30-L.jpg">
-					<div class="item-mask"></div>
-					<i class="icon-play watch"></i>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/6309140_1I4214595.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>潮汐海灵菲兹史诗皮肤 虚空海灵</p>
 				</div>
-				<p>教你一招：教你4分钟学会杰斯最强秒人连招</p>
-			</div>
-			<div class="flex-item">
-				<div class="pic">
-					<img src="./images/video/65-1G11GJA40-L.jpg">
-					<div class="item-mask"></div>
-					<i class="icon-play watch"></i>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/4D21F_1K9324E7.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>LOL日冕女神 卡尔玛</p>
 				</div>
-				<p>Miss排位日记453期：S8电刑人马酷秀登场！</p>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/5329500_152G63P6.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>蛮族之王泰达米尔普通皮肤 关羽 云长</p>
+				</div>
+				<div class="flex-item">
+					<div class="pic">
+						<img src="./images/video/4D21F_1Q01B0F.jpg">
+						<div class="item-mask"></div>
+						<i class="icon-play watch"></i>
+					</div>
+					<p>猩红收割者弗拉基米尔传说皮肤 鲜血领主</p>
+				</div>
 			</div>
 		</div>
 		<!-- 视频弹出层 -->
@@ -233,7 +353,7 @@
 				document.querySelectorAll('.icon-play')[index].style.opacity = '0';
 				var play = document.querySelectorAll('.icon-play')[index].className;
 				document.querySelectorAll('.icon-play')[index].className = play.slice(0, play.indexOf(' scale'));
-		});
+			});
 		});
 	})()
 </script>
