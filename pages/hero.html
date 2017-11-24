@@ -5,9 +5,9 @@
 	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
 	<meta charset="utf-8">
 	<title>英雄介绍</title>
-	<link rel="stylesheet" type="text/css" href="./css/main.css">
-	<link href="./css/swiper-3.4.2.min.css" rel="stylesheet">
-	<script src="./js/vue.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link href="../css/swiper-3.4.2.min.css" rel="stylesheet">
+	<script src="../js/vue.min.js"></script>
 	<style type="text/css">
 		/*默认滚动条样式只作用于webkit内核*/
 		::-webkit-scrollbar {
@@ -32,7 +32,7 @@
 		}
 		/* end */
 		body {
-			background-image: url(./images/bg-heros.png);
+			background-image: url(../images/bg-heros.png);
 			background-size: cover;
 			overflow-x: hidden;
 		}
@@ -70,11 +70,11 @@
 		}
 		.icon-search {
 			float: left;
-    		background-image: url(./fonts/search.svg);
+    		background-image: url(../fonts/search.svg);
 		}
 		.icon-close {
 			float: right;
-    		background-image: url(./fonts/close.svg);
+    		background-image: url(../fonts/close.svg);
 		}
 		.icon-close:hover {
 			opacity: 0.3;
@@ -112,7 +112,7 @@
 			z-index: 99;
 			background-size: 20px 20px;
 		    background-repeat: no-repeat;
-		    background-image: url(./fonts/selected.svg);
+		    background-image: url(../fonts/selected.svg);
 		}
 		.flex-content>div {
 			display: flex;
@@ -264,7 +264,7 @@
 		<nav>
 			<!-- logo -->
 			<div class="nav-left">
-	            <a href="index.html" class="nav-logo"></a>
+	            <a href="../index.html" class="nav-logo"></a>
 	        </div>
 	        <!--  -->
 	        <ul>
@@ -279,7 +279,7 @@
 	        	</li>
 	        	<li><a href="video.html">视频专区</a></li>
 	        	<li><a href="message.html">留言</a></li>
-	        	<li><a href="">游戏下载</a></li>
+	        	<li><a href="download.html">游戏下载</a></li>
 	        </ul>
 	        <div class="nav-right">
 	        	<a href="login.html" class="nav-download nav-transition">登陆/注册</a>
@@ -292,7 +292,7 @@
         			<dd><a href="map.html">地图介绍</a></dd>
         		</dl>
 	        	<div class="opt">
-	        		<a href="index.html">首页</a>
+	        		<a href="../index.html">首页</a>
 	        		<a href="guide.html">新手指引</a>
 	        		<a href="video.html">视频专区</a>
 	        		<a href="message.html">留言</a>
@@ -371,8 +371,8 @@
 		</div>
 		<!-- end -->
 		<!-- 渲染数据 -->
-		<script src="./js/LOLHeros.js"></script>
-		<script src="./js/swiper-3.4.2.min.js"></script>
+		<script src="../js/LOLHeros.js"></script>
+		<script src="../js/swiper-3.4.2.min.js"></script>
 		<script>
 			// 这里采用IIFE和闭包的形式是为了让外部(也就是全局作用域)无法获取vue实例
 			// 并且由于形成闭包，内部作用域一直依然存在，所以它也不会被销毁
@@ -542,6 +542,6 @@
 		
 	}
 </script>
-<script src="./js/main.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

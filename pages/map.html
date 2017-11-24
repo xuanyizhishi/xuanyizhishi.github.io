@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta charset="utf-8">
+	<title>地图介绍</title>
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link href="../css/swiper-3.4.2.min.css" rel="stylesheet">
+	<style type="text/css">
+		.banner-up, .banner-down {
+			position: absolute;
+		    cursor: pointer;
+		    left: 50%;
+		    margin-left: -24px;
+		    width: 47px;
+		    height: 47px;
+		    text-align: center;
+		    line-height: 47px;
+		    color: #fff;
+		    font-size: 24px;
+		}
+		.banner-down {
+		    top: 90%;
+		}
+		.banner-up {
+		    top: 10%;
+		}
+		.banner-down:hover:before, .banner-up:hover:before {
+		    background: #4caf50;
+		    opacity: .6
+		}
+		.banner-down::before, .banner-up::before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 47px;
+			height: 47px;
+			padding-right: 5px;
+		    background-color: #ffffff;
+		    border-radius: 50%;
+		    opacity: .2;
+		}
+		.banner-down i, .banner-up i {
+			position: relative;
+    		z-index: 2;
+		}
+		.clear {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<!-- 导航 -->
+	<div class="navbars">
+		<nav>
+			<!-- logo -->
+			<div class="nav-left">
+	            <a href="../index.html" class="nav-logo"></a>
+	        </div>
+	        <!--  -->
+	        <ul>
+	        	<li><a href="guide.html">新手指引</a></li>
+	        	<li class="drop-down">
+	        		<a href="javascript:void(0);">介绍<i class="icon-down"></i></a>
+	        		<dl class="down-detail" style="display: none;">
+	        			<dd><a href="game.html">游戏介绍</a></dd>
+	        			<dd><a href="hero.html">英雄介绍</a></dd>
+	        			<dd><a href="map.html">地图介绍</a></dd>
+	        		</dl>
+	        	</li>
+	        	<li><a href="video.html">视频专区</a></li>
+	        	<li><a href="message.html">留言</a></li>
+	        	<li><a href="download.html">游戏下载</a></li>
+	        </ul>
+	        <div class="nav-right">
+	        	<a href="login.html" class="nav-download nav-transition">登陆/注册</a>
+	        </div>
+	        <!-- 移动端导航(移动端当然不支持下载pc端游啦) -->
+	        <div class="nav-bottom">
+	        	<dl class="up-detail" style="display: none;">
+        			<dd><a href="game.html">游戏介绍</a></dd>
+        			<dd><a href="hero.html">英雄介绍</a></dd>
+        			<dd><a href="map.html">地图介绍</a></dd>
+        		</dl>
+	        	<div class="opt">
+	        		<a href="../index.html">首页</a>
+	        		<a href="guide.html">新手指引</a>
+	        		<a href="video.html">视频专区</a>
+	        		<a href="message.html">留言</a>
+	        		<a href="javascript:void(0);" class="upShow">介绍<i class="icon-up"></i></a>
+	        	</div>
+	        </div>
+	        <!-- end 移动端导航 -->
+		</nav>
+	</div>
+	<!-- end 导航-->
+
+	<section class="how-to-play">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="bg-1 bg-blur"></div>
+					<div class="content">
+					<img src="../images/lv1.png" alt="黄铜">
+					<h2>召唤师峡谷</h2>
+					<p>
+						召唤师峡谷位于弗雷尔卓德和一座偏僻的森林之间。召唤师峡谷是瓦罗兰大陆上一个为数不多的，到处充斥着魔法力量的地方，<br><br>
+						使之成为一个受追求魔法者欢迎的地方。这里的魔法能量是如此的大，改变了这里的生物。这里生存着巨大的青蛙，双头狼，变色龙，<br><br>
+						有角的兔子和蝴蝶。这个地方也吸引了龙。而纳什男爵也再度出现，这是一条巨大的蛇形生物，很多人认为它已经死了几个世纪，它污染着周围的土地。<br><br>
+						
+						三条不同的道路贯穿整个战场，选择敌人最薄弱的一条发动进攻。与你的友军一起进攻敌人的基地，然后摧毁他们的水晶枢纽！<br><br>
+					</p>
+					</div>
+					<div class="banner-down"><i class="icon-down"></i></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="bg-2 bg-blur"></div>
+					<div class="content">
+					<img src="../images/lv2.png" alt="白银">
+					<h2>扭曲丛林</h2>
+					<p>
+						扭曲丛林位于铁脊山脉以北的一片茂密的森林，位于祖安城邦和另一个主关口之间(这个关口将诺克萨斯和瓦罗兰北部海滩连接起来)<br><br>。扭曲丛林作为祖安附近仅有几处未被砍伐的森林，或许这个竞技场的地形可以解释原因。魔法滥用——主要来自祖安，当然也包括符文之战无数次战斗)<br><br>——扭曲了森林翠绿的生态环境，将其变成一片奇异的异域景象。扭曲丛林里的两座水晶枢纽更多的要持该地区物理环境的稳定性。<br><br>
+					</p>
+					</div>
+					<div class="banner-up"><i class="icon-up"></i></div>
+					<div class="banner-down"><i class="icon-down"></i></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="bg-3 bg-blur"></div>
+					<div class="content">
+					<img src="../images/lv3.png" alt="黄金">
+					<h2>嚎哭深渊</h2>
+					<p>
+						嚎哭深渊，无底的缝隙，开凿于冰川之中的远古壁垒耸立两侧。没有人记得谁建造了这个地方，也没有人知道它为何而建。<br><br>
+						许久之前，恕瑞玛还没有被黄沙吞没，魔法也还没有撕裂山峦。强大的冰霜守卫交予我们魔法，让我们变成了不朽的存在，<br><br>
+						他叫我们- 冰族。作为反馈，我们建造了坚实的壁垒，建立了庞大的帝国，献上了我们的忠诚。然而，反抗和背叛让无数冰族陨落。嚎哭深渊就此成名。<br><br>
+						
+						所有人随机选取英雄，地图只有一条兵线，只有死亡后才能回基地补给和消费。<br><br>
+					</p>
+					</div>
+					<div class="banner-up"><i class="icon-up"></i></div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+	</section>
+
+	<div class="clear"></div>
+
+	<footer>
+		<nav>
+			<ul>
+				<li><a target="_blank" href="">英雄联盟官网</a></li>
+				<li><a target="_blank" href="message.html">留言</a></li>
+				<li><a target="_blank" href="">LOL直播</a></li>
+			</ul>
+		</nav>
+		<div style="text-align: center;">
+			<p>Copyright © 2017-2018 Battle of the canyons.</p>
+			<p>计算机应用技术班1531班王捷所有</p>
+		</div>
+	</footer>
+<script src="../js/swiper-3.4.2.min.js"></script>
+<script>
+	window.onload = function () {
+		document.querySelector('.clear').style.height = window.innerHeight + 'px';
+	}
+
+	!function () {
+		var swiper3 = new Swiper('.how-to-play', {
+			direction : 'vertical',
+			pagination : '.swiper-pagination',
+			spaceBetween: 0,
+			onInit: function(swiper){
+				swiper.disableTouchControl();
+		    }
+	    });
+	    var winWidth = window.innerWidth || document.body.clientWidth;
+
+		if(winWidth <= 884) {
+			swiper3.enableTouchControl();
+		}
+
+	    var bannerDowns = document.querySelectorAll('.banner-down');
+	    var bannerUps = document.querySelectorAll('.banner-up');
+	    Array.prototype.forEach.call(bannerDowns, function (item) {
+	    	item.addEventListener('click', function () {
+	    		swiper3.slideNext();
+	    	});
+	    });
+	    Array.prototype.forEach.call(bannerUps, function (item) {
+	    	item.addEventListener('click', function () {
+	    		swiper3.slidePrev();
+	    	});
+	    });
+	}()
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

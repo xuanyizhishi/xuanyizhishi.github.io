@@ -257,7 +257,7 @@ video::-webkit-media-controls-enclosure {
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
-    background-color: #dbbb7a
+    background-color: #3d4860
 }
 .btn-watch:hover {
     background-color: rgba(0,0,0,0.5)
@@ -378,7 +378,11 @@ video::-webkit-media-controls-enclosure {
 }
 .how-to-play {
     font-size: 24px;
-    height: 700px
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 .bg-1 {
     background-image: url(../images/module_1.jpg)
@@ -595,7 +599,7 @@ footer ul li a:hover{
     .how-to-play .content {
         width: 70%
     }
-    #watch, .navbars ul {
+    .watch, .navbars ul {
     	display: none !important
     }
     .LOL-introduce {
@@ -643,5 +647,8 @@ footer ul li a:hover{
         display: inline-block;
         height: auto;
         max-width: 100%;
-    } 
+    }
+    .banner-down {
+        top: 80% !important;
+    }
 }
