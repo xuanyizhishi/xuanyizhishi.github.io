@@ -599,7 +599,7 @@ footer ul li a:hover{
     .how-to-play .content {
         width: 70%
     }
-    .watch, .navbars ul {
+    .btn-watch, .navbars ul {
     	display: none !important
     }
     .LOL-introduce {
