@@ -420,7 +420,7 @@ video::-webkit-media-controls-enclosure {
 }
 /* begin login.html */
 .container-login {
-    min-height: 770px;
+    height: calc(100vh - 112px);
     background: url(../images/bg-login.png) top/cover no-repeat
 }
 .wrapper-login {
@@ -430,7 +430,6 @@ video::-webkit-media-controls-enclosure {
     text-align: center
 }
 .section-login {
-    padding: 10px 0;
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     background: hsla(0,0%,100%,.95)
 }
@@ -438,6 +437,7 @@ video::-webkit-media-controls-enclosure {
     display: none;
     margin: 0 auto;
     padding: 30px 0;
+    transition: all .3s;
     width: 330px
 }
 .replace-view .input, .message-editor input {
@@ -650,5 +650,8 @@ footer ul li a:hover{
     }
     .banner-down {
         top: 80% !important;
+    }
+    .container-login {
+        height: calc(100vh - 131px);
     }
 }
